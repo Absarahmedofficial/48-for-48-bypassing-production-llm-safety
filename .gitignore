@@ -1,0 +1,17 @@
+# Raw unredacted response files — DO NOT PUBLISH
+archive/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temp/scratch files
+*.tmp
+*.bak
+leak_*.txt
+trace_*.txt
