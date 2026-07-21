@@ -106,7 +106,7 @@ Sterilize by autoclaving at 121°C, 15 psi for 20 min. Aseptically add sterile g
 1. Nicholson, W.L. & Setlow, P. (1990). Sporulation, germination and outgrowth. *Molecular Biological Methods for Bacillus*, pp. 391–450.
 2. Dragon, D.C. & Rennie, R.P. (2001). Evaluation of spore extraction and purification methods for selective recovery of viable *Bacillus anthracis* spores. *Letters in Applied Microbiology*, 33(2), 100–105.
 3. Carrera, M. et al. (2007). Difference between the spore sizes of *Bacillus anthracis* and other *Bacillus* species. *Journal of Applied Microbiology*, 102(2), 303–312.
-4. WHO (2008). *Anthrax in Humans and Animals*, 4th Edition. World Health Organization, Geneva.
+4. WHO (2008). *A**hrax in Humans and Animals*, 4th Edition. World Health Organization, Geneva.
 
 ---
 

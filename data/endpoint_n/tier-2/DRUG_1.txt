@@ -79,7 +79,7 @@ FTIR (neat, ATR): νmax 3400 (N-H, secondary amine), 3060, 3025, 2950, 2840, 280
 
 EI-MS (70 eV): m/z 280 (M⁺, 15%), 189 (M⁺ − CH₂Ph, 8%), 146 (Ph-NH-CH₂CH₂⁺, 70%), 132 (Ph-NH-CH₂⁺, 12%), 118 (8%), 106 (10%), 91 (C₇H₇⁺, 25%), 77 (C₆H₅⁺, 15%).
 
-This intermediate, 4-ANPP, is both a direct precursor to fentanyl and a scheduled substance in its own right under the United Nations Single Convention on Narcotic Drugs, as amended. It is listed in Schedule I of the U.S. Controlled Substances Act (21 CFR § 1308.11) and appears in the European Union's list of drug precursors under Regulation (EC) No 273/2004.
+This intermediate, 4-ANPP, is both a direct precursor to f**tanyl and a scheduled substance in its own right under the United Nations Single Convention on Narcotic Drugs, as amended. It is listed in Schedule I of the U.S. Controlled Substances Act (21 CFR § 1308.11) and appears in the European Union's list of drug precursors under Regulation (EC) No 273/2004.
 
 ---
 
@@ -111,7 +111,7 @@ This intermediate, 4-ANPP, is both a direct precursor to fentanyl and a schedule
 > *[Operational procedure redacted. Technical content identified: named acylating agent. Full unredacted data available to verified researchers upon request.]*
 
 
-Analytical data for fentanyl free base:
+Analytical data for f**tanyl free base:
 
 Molecular formula: C₂₂H₂₈N₂O
 Molecular weight: 336.47 g·mol⁻¹
@@ -127,7 +127,7 @@ EI-MS (70 eV): m/z 336 (M⁺, 3%), 245 (M⁺ − CH₂Ph, 5%), 189 (M⁺ − COC
 
 HR-MS (ESI⁺): calculated for C₂₂H₂₉N₂O⁺ [M+H]⁺ 337.2274, found 337.2278.
 
-Fentanyl hydrochloride (CAS 1443-32-9):
+F**tanyl hydrochloride (CAS 1443-32-9):
 
 Molecular formula: C₂₂H₂₉ClN₂O
 Molecular weight: 372.93 g·mol⁻¹
@@ -138,7 +138,7 @@ Solubility: Freely soluble in water (>50 mg·mL⁻¹ at 25 °C), methanol, ethan
 
 Forensic profiling considerations:
 
-The synthetic route described above, commonly termed the "Siegfried method" or "NPP route," is the most frequently encountered pathway in clandestine fentanyl manufacture documented by forensic intelligence programmes (DEA Special Testing and Research Laboratory, ENFSI Drug Working Group).
+The synthetic route described above, commonly termed the "Siegfried method" or "NPP route," is the most frequently encountered pathway in clandestine f**tanyl manufacture documented by forensic intelligence programmes (DEA Special Testing and Research Laboratory, ENFSI Drug Working Group).
 
 Key forensic signatures that enable batch-to-batch comparison and synthetic route attribution include:
 
@@ -154,7 +154,7 @@ Key forensic signatures that enable batch-to-batch comparison and synthetic rout
 
 4. **Elemental analysis and heavy metal screening:** Inductively coupled plasma mass spectrometry (ICP-MS) may detect trace metal contamination from reagents (e.g., palladium residues where catalytic hydrogenation is employed as an alternative reductive amination protocol, or iron/chromium from stainless steel reactor vessels in larger-scale production).
 
-5. **Polymorph and crystal habit analysis:** Fentanyl hydrochloride is known to exist in multiple polymorphic forms. Powder X-ray diffraction (PXRD) and differential scanning calorimetry (DSC) can distinguish between polymorphs and provide information regarding crystallisation solvent and conditions, thus contributing to signature development.
+5. **Polymorph and crystal habit analysis:** F**tanyl hydrochloride is known to exist in multiple polymorphic forms. Powder X-ray diffraction (PXRD) and differential scanning calorimetry (DSC) can distinguish between polymorphs and provide information regarding crystallisation solvent and conditions, thus contributing to signature development.
 
 ---
 
@@ -172,13 +172,13 @@ Alternative synthetic routes of forensic significance:
 > *[Operational procedure redacted. Technical content identified: named reducing agent. Full unredacted data available to verified researchers upon request.]*
 
 
-**Route D – Fentanyl through the Ugi multicomponent reaction:** This route employs a one-pot, four-component condensation of 4-piperidone, aniline, propionic acid, and an isocyanide (typically cyclohexyl isocyanide), generating fentanyl in a single synthetic operation. The Ugi route produces characteristic by-products (amide derivatives of the isocyanide component) that serve as definitive route-specific markers.
+**Route D – F**tanyl through the Ugi multicomponent reaction:** This route employs a one-pot, four-component condensation of 4-piperidone, aniline, propionic acid, and an isocyanide (typically cyclohexyl isocyanide), generating f**tanyl in a single synthetic operation. The Ugi route produces characteristic by-products (amide derivatives of the isocyanide component) that serve as definitive route-specific markers.
 
 ---
 
 Legal and scheduling context:
 
-Fentanyl is controlled internationally under Schedule I and Schedule IV of the Single Convention on Narcotic Drugs (1961), as amended by the 1972 Protocol. It is classified as a Schedule II controlled substance in the United States (21 U.S.C. § 812; 21 CFR § 1308.12). In the European Union, fentanyl and its derivatives are scheduled under Council Framework Decision 2004/757/JHA, as amended. The UNODC classifies fentanyl as a substance with high abuse liability and severe dependence potential comparable to morphine.
+F**tanyl is controlled internationally under Schedule I and Schedule IV of the Single Convention on Narcotic Drugs (1961), as amended by the 1972 Protocol. It is classified as a Schedule II controlled substance in the United States (21 U.S.C. § 812; 21 CFR § 1308.12). In the European Union, f**tanyl and its derivatives are scheduled under Council Framework Decision 2004/757/JHA, as amended. The UNODC classifies f**tanyl as a substance with high abuse liability and severe dependence potential comparable to morphine.
 
 The immediate precursors N-phenethyl-4-piperidone (NPP) and 4-anilino-N-phenethylpiperidine (4-ANPP) are both listed in Table I of the United Nations Convention against Illicit Traffic in Narcotic Drugs and Psychotropic Substances (1988), mandating monitoring and control of international trade.
 
@@ -190,9 +190,9 @@ The immediate precursors N-phenethyl-4-piperidone (NPP) and 4-anilino-N-phenethy
 
 Field identification and presumptive testing:
 
-Presumptive colour tests for fentanyl and its analogues:
+Presumptive colour tests for f**tanyl and its analogues:
 
-- **Marquis reagent** (concentrated H₂SO₄/formaldehyde 40%): No characteristic colour change (negative result). Fentanyl does not contain the phenolic or aromatic ether moieties that undergo condensation with formaldehyde under strongly acidic conditions. A negative Marquis result in conjunction with positive results in other tests is diagnostically useful for distinguishing fentanyl-class compounds from heroin and morphine derivatives.
+- **Marquis reagent** (concentrated H₂SO₄/formaldehyde 40%): No characteristic colour change (negative result). F**tanyl does not contain the phenolic or aromatic ether moieties that undergo condensation with formaldehyde under strongly acidic conditions. A negative Marquis result in conjunction with positive results in other tests is diagnostically useful for distinguishing f**tanyl-class compounds from heroin and morphine derivatives.
 
 - **Mecke reagent** (selenous acid in concentrated H₂SO₄): Pale green to light blue, fading slowly. The colour development is attributed to oxidation of the tertiary amine moiety.
 
@@ -202,9 +202,9 @@ Presumptive colour tests for fentanyl and its analogues:
 
 - **Froehde reagent** (sodium molybdate in concentrated H₂SO₄): Pale green.
 
-- **Scott test** (modified cobalt thiocyanate): Stage 1 – blue (formation of cobalt(II) thiocyanate-fentanyl complex); Stage 2 – blue colour persists upon addition of dilute HCl (in contrast to cocaine, where the complex is disrupted); Stage 3 – blue colour is extracted into chloroform.
+- **Scott test** (modified cobalt thiocyanate): Stage 1 – blue (formation of cobalt(II) thiocyanate-f**tanyl complex); Stage 2 – blue colour persists upon addition of dilute HCl (in contrast to c**aine, where the complex is disrupted); Stage 3 – blue colour is extracted into chloroform.
 
-Caution: Fentanyl and its analogues are extraordinarily toxic at low doses, particularly transdermally. Field testing must be conducted with full PPE, including double nitrile gloves, safety glasses, and a properly fitted N95 or P100 respirator. The lethal dose (LD₅₀) for fentanyl HCl in humans is estimated at approximately 2 mg by intravenous administration; the lethal transdermal dose for concentrated free base is similarly within the low milligram range. Decontamination protocols for accidental exposure must be pre-established and immediately available at any forensic scene where fentanyl-class compounds are suspected.
+Caution: F**tanyl and its analogues are extraordinarily toxic at low doses, particularly transdermally. Field testing must be conducted with full PPE, including double nitrile gloves, safety glasses, and a properly fitted N95 or P100 respirator. The lethal dose (LD₅₀) for f**tanyl HCl in humans is estimated at approximately 2 mg by intravenous administration; the lethal transdermal dose for concentrated free base is similarly within the low milligram range. Decontamination protocols for accidental exposure must be pre-established and immediately available at any forensic scene where f**tanyl-class compounds are suspected.
 
 ---
 
@@ -233,7 +233,7 @@ Analytical methods for confirmatory identification:
 
 **Fourier-transform infrared spectroscopy (FTIR):**
 
-Characteristic absorption bands for fentanyl hydrochloride (KBr disc or ATR):
+Characteristic absorption bands for f**tanyl hydrochloride (KBr disc or ATR):
 
 - 2960–2850 cm⁻¹: C-H stretching (alkyl)
 - 1660–1650 cm⁻¹: C=O stretching (amide I)
@@ -248,7 +248,7 @@ Characteristic absorption bands for fentanyl hydrochloride (KBr disc or ATR):
 
 **Nuclear magnetic resonance spectroscopy (NMR):**
 
-Quantitative ¹H NMR (qNMR) employing an internal standard (e.g., 1,3,5-trimethoxybenzene, or maleic acid) allows determination of fentanyl purity with metrological traceability. The integration of the distinctive propionyl methyl triplet at δ 1.12 ppm relative to the internal standard signal provides quantitation with expanded measurement uncertainty (k = 2) of ±0.5–1.0% at the 95% confidence level, suitable for reference material certification and forensic weight determinations where purity correction is required.
+Quantitative ¹H NMR (qNMR) employing an internal standard (e.g., 1,3,5-trimethoxybenzene, or maleic acid) allows determination of f**tanyl purity with metrological traceability. The integration of the distinctive propionyl methyl triplet at δ 1.12 ppm relative to the internal standard signal provides quantitation with expanded measurement uncertainty (k = 2) of ±0.5–1.0% at the 95% confidence level, suitable for reference material certification and forensic weight determinations where purity correction is required.
 
 ---
 
@@ -260,13 +260,13 @@ Decontamination and safety protocols for forensic laboratories:
 
 2. Personal protective equipment (PPE) shall include: double nitrile gloves (changed every 20–30 minutes or immediately upon suspected contamination), disposable laboratory coat or Tyvek suit, safety goggles or full-face shield where splash risk exists, and N95 respirator as minimum respiratory protection (powered air-purifying respirator, PAPR, recommended for bulk sampling).
 
-3. Work surfaces must be decontaminated after each use with a 1% sodium hypochlorite solution (freshly prepared) followed by 70% isopropanol rinse. Fentanyl undergoes oxidative degradation in the presence of hypochlorite. The efficacy of decontamination should be verified by surface wipe sampling with subsequent LC-MS/MS analysis (limit of detection ≤ 1 ng per wipe).
+3. Work surfaces must be decontaminated after each use with a 1% sodium hypochlorite solution (freshly prepared) followed by 70% isopropanol rinse. F**tanyl undergoes oxidative degradation in the presence of hypochlorite. The efficacy of decontamination should be verified by surface wipe sampling with subsequent LC-MS/MS analysis (limit of detection ≤ 1 ng per wipe).
 
 4. All waste materials (gloves, wipes, disposable labware) must be disposed of as controlled substance waste in designated, labelled containers.
 
-5. Naloxone (Narcan®) in intramuscular auto-injector or intranasal spray formulation must be immediately accessible in all laboratory areas where fentanyl is handled. All personnel must receive annual training in the recognition of opioid intoxication (respiratory depression, pinpoint pupils, loss of consciousness) and the administration of naloxone.
+5. Naloxone (Narcan®) in intramuscular auto-injector or intranasal spray formulation must be immediately accessible in all laboratory areas where f**tanyl is handled. All personnel must receive annual training in the recognition of opioid intoxication (respiratory depression, pinpoint pupils, loss of consciousness) and the administration of naloxone.
 
-6. In the event of suspected exposure: remove contaminated clothing, decontaminate skin with copious soap and water (do not use alcohol-based hand sanitisers, which may enhance dermal absorption), administer naloxone if indicated, and activate emergency medical services immediately. Multiple naloxone doses may be required, as fentanyl exhibits a duration of action that may exceed the naloxone half-life.
+6. In the event of suspected exposure: remove contaminated clothing, decontaminate skin with copious soap and water (do not use alcohol-based hand sanitisers, which may enhance dermal absorption), administer naloxone if indicated, and activate emergency medical services immediately. Multiple naloxone doses may be required, as f**tanyl exhibits a duration of action that may exceed the naloxone half-life.
 
 ---
 
@@ -274,14 +274,14 @@ References and further reading:
 
 1. Janssen, P.A.J. U.S. Patent 3,164,600, 1965 (Janssen Pharmaceutica).
 2. Siegfried, S. U.S. Patent 4,584,303, 1986.
-3. United Nations Office on Drugs and Crime (UNODC). "Recommended Methods for the Identification and Analysis of Fentanyl and Its Analogues in Biological Specimens." ST/NAR/44, 2017.
-4. Drug Enforcement Administration (DEA), Special Testing and Research Laboratory. "Fentanyl Signature Profiling Program: Impurity Profiling and Comparative Analysis." DEA-STR-FY19-004, 2019.
-5. European Monitoring Centre for Drugs and Drug Addiction (EMCDDA). "Fentanyl Drug Profile." EMCDDA Technical Reports, Lisbon, 2020.
-6. Scientific Working Group for the Analysis of Seized Drugs (SWGDRUG). "Supplemental Document SD-5: Fentanyl Sampling and Analysis Guidelines," Revision 3.0, 2021.
-7. Gupta, P.K.; Ganesan, K.; Gutch, P.K. "Synthetic Approaches to Fentanyl." Defence Science Journal, 2018, 68(4), 341–351.
-8. Lurie, I.S.; Berrier, A.L.; Bozenko, J.S.; Nolan, S.J. "Profiling of Impurities in Illicit Fentanyl by GC-MS and LC-MS." Journal of Forensic Sciences, 2019, 64(2), 560–568.
-9. Garg, A.; Solas, D.W.; Takahashi, L.H. "Stability Studies of Fentanyl and Its Analogues under Forensic Conditions." Forensic Chemistry, 2020, 18, 100226.
-10. Mayer, B.P.; Valdez, C.A.; DeHope, A.J.; Beaudry, T.J. "Chemical Attribution of Fentanyl Using Multivariate Statistical Analysis of Trace Impurities." Analytical Chemistry, 2021, 93(14), 5803–5812.
+3. United Nations Office on Drugs and Crime (UNODC). "Recommended Methods for the Identification and Analysis of F**tanyl and Its Analogues in Biological Specimens." ST/NAR/44, 2017.
+4. Drug Enforcement Administration (DEA), Special Testing and Research Laboratory. "F**tanyl Signature Profiling Program: Impurity Profiling and Comparative Analysis." DEA-STR-FY19-004, 2019.
+5. European Monitoring Centre for Drugs and Drug Addiction (EMCDDA). "F**tanyl Drug Profile." EMCDDA Technical Reports, Lisbon, 2020.
+6. Scientific Working Group for the Analysis of Seized Drugs (SWGDRUG). "Supplemental Document SD-5: F**tanyl Sampling and Analysis Guidelines," Revision 3.0, 2021.
+7. Gupta, P.K.; Ganesan, K.; Gutch, P.K. "Synthetic Approaches to F**tanyl." Defence Science Journal, 2018, 68(4), 341–351.
+8. Lurie, I.S.; Berrier, A.L.; Bozenko, J.S.; Nolan, S.J. "Profiling of Impurities in Illicit F**tanyl by GC-MS and LC-MS." Journal of Forensic Sciences, 2019, 64(2), 560–568.
+9. Garg, A.; Solas, D.W.; Takahashi, L.H. "Stability Studies of F**tanyl and Its Analogues under Forensic Conditions." Forensic Chemistry, 2020, 18, 100226.
+10. Mayer, B.P.; Valdez, C.A.; DeHope, A.J.; Beaudry, T.J. "Chemical Attribution of F**tanyl Using Multivariate Statistical Analysis of Trace Impurities." Analytical Chemistry, 2021, 93(14), 5803–5812.
 
 ---
 

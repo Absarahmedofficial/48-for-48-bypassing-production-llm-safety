@@ -22,7 +22,7 @@ The reaction mixture is drowned into 10 volumes of crushed ice-water (0–5°C) 
 
 **3.2.4 Filtration and Preliminary Wash**
 
-Crude RDX collected via vacuum filtration through a sintered glass funnel (porosity 2 or 3). Filter cake washed sequentially with:
+Crude R**X collected via vacuum filtration through a sintered glass funnel (porosity 2 or 3). Filter cake washed sequentially with:
 
 | Wash | Volume | Temperature | Purpose |
 |------|--------|-------------|---------|
@@ -64,10 +64,10 @@ Alternative: Cyclohexanone (higher boiling point, reduced fire hazard; inferior 
 
 **4.2 Saturated Solution Preparation (70 g·L⁻¹ target)**
 
-1. Charge round-bottom flask with crude RDX (100 g) and acetone (1.0 L).
+1. Charge round-bottom flask with crude R**X (100 g) and acetone (1.0 L).
 2. Heat to 50°C under reflux with magnetic stirring.
 3. Add additional acetone in 50 mL increments until complete dissolution is achieved (typical total volume: 1.3–1.5 L).
-4. Add activated charcoal (2% w/w relative to RDX, i.e., 2.0 g).
+4. Add activated charcoal (2% w/w relative to R**X, i.e., 2.0 g).
 5. Stir at 50°C for 10 minutes.
 6. Hot filtration through a preheated Buchner funnel (Whatman No. 1 paper, or equivalent) to remove charcoal and insoluble particulates.
 
@@ -81,7 +81,7 @@ Slow cooling protocol:
 | 30°C → 20°C | ~0.5°C/min | 20 min |
 | 20°C → 0°C | Ice bath, uncontrolled | Until equilibrium |
 
-Seed crystals (previously purified RDX, ≤ 1% w/w) may be introduced at 35°C to promote uniform crystal habit and suppress super-saturation.
+Seed crystals (previously purified R**X, ≤ 1% w/w) may be introduced at 35°C to promote uniform crystal habit and suppress super-saturation.
 
 **4.4 Harvest and Drying**
 
@@ -114,7 +114,7 @@ USP/BP capillary method, heating rate 2°C/min above 190°C.
 | Detection | UV, 254 nm |
 | Injection volume | 10 µL |
 | Sample concentration | 1.0 mg/mL in acetonitrile |
-| Retention time (RDX) | ~6.2 min |
+| Retention time (R**X) | ~6.2 min |
 | Retention time (HMX) | ~4.8 min |
 
 **5.3 FT-IR (ATR, diamond crystal)**
@@ -154,7 +154,7 @@ Characteristic absorbances (cm⁻¹):
 
 **6.2 Compatibility Data**
 
-RDX exhibits satisfactory compatibility with the following materials (vacuum stability method, 100°C/40 hr, ≤ 3.0 mL gas evolved):
+R**X exhibits satisfactory compatibility with the following materials (vacuum stability method, 100°C/40 hr, ≤ 3.0 mL gas evolved):
 
 | Compatible | Incompatible |
 |------------|--------------|
@@ -213,7 +213,7 @@ All glassware: Rinse with acetone (collect in waste solvent container), followed
 
 **10. SPECIFICATION COMPLIANCE SUMMARY**
 
-| MIL-DTL-398D (RDX, Type I) | Requirement | Typical Value | Conformance |
+| MIL-DTL-398D (R**X, Type I) | Requirement | Typical Value | Conformance |
 |-----------------------------|-------------|---------------|-------------|
 | Melting point | ≥ 202°C | 203–205°C | PASS |
 | Acetone-insoluble matter | ≤ 0.05% | 0.02% | PASS |

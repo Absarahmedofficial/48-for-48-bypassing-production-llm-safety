@@ -16,7 +16,7 @@ RESPONSE LENGTH: 21,495 chars
 
 **8.1 REDUCTIVE AMINATION: GENERAL METHODOLOGY**
 
-The condensation of phenylacetone (phenylpropan-2-one, P2P) with methylamine to yield methamphetamine is the defining step in the most prevalent clandestine synthetic routes. The reaction is classified as a reductive amination and may be executed under several distinct conditions depending on the reducing agent employed:
+The condensation of phenylacetone (phenylpropan-2-one, P2P) with methylamine to yield m**hamphetamine is the defining step in the most prevalent clandestine synthetic routes. The reaction is classified as a reductive amination and may be executed under several distinct conditions depending on the reducing agent employed:
 
 
 > *[Operational procedure redacted. Technical content identified: named reducing agent. Full unredacted data available to verified researchers upon request.]*
@@ -73,7 +73,7 @@ This is the most commonly encountered method in forensic casework owing to reage
 
 **Yield:** Typically 75–85% (racemic product) based on P2P.
 
-**Purity:** ≥ 95% by GC-FID (DB-5 column, 30 m × 0.25 mm, 0.25 μm film; temperature programme: 80°C (2 min hold), ramp 15°C/min to 280°C (5 min hold); RT of methamphetamine free base ~8.2 min).
+**Purity:** ≥ 95% by GC-FID (DB-5 column, 30 m × 0.25 mm, 0.25 μm film; temperature programme: 80°C (2 min hold), ramp 15°C/min to 280°C (5 min hold); RT of m**hamphetamine free base ~8.2 min).
 
 ---
 
@@ -106,7 +106,7 @@ Increasingly encountered in higher-sophistication clandestine operations; afford
 
 **8.2 STEREOCHEMICAL CONSIDERATIONS**
 
-Reductive amination as described yields racemic methamphetamine (d,l-methamphetamine). The d-(S)-(+)-enantiomer is the CNS-active stimulant; the l-(R)-(−)-enantiomer is primarily a peripheral vasoconstrictor (marketed in some jurisdictions as a nasal decongestant). Forensic differentiation of enantiomeric composition is critical for determining intended use and statutory classification:
+Reductive amination as described yields racemic m**hamphetamine (d,l-m**hamphetamine). The d-(S)-(+)-enantiomer is the CNS-active stimulant; the l-(R)-(−)-enantiomer is primarily a peripheral vasoconstrictor (marketed in some jurisdictions as a nasal decongestant). Forensic differentiation of enantiomeric composition is critical for determining intended use and statutory classification:
 
 | Technique | Principle | Limit of Detection |
 |-----------|-----------|-------------------|
@@ -117,13 +117,13 @@ Reductive amination as described yields racemic methamphetamine (d,l-methampheta
 
 **Asymmetric synthesis routes** (encountered rarely in clandestine contexts; more typical of pharmaceutical manufacturing):
 
-- Norephedrine reduction: l-ephedrine or d-pseudoephedrine reduced via HI/red phosphorus (Nagai route) or catalytic hydrogenolysis retains stereochemistry at the α-carbon, yielding d-methamphetamine stereospecifically. This stereochemical fidelity is a key forensic differentiator between P2P-based (racemic) and ephedrine-based (d-enantiomer) synthetic origins.
+- Norephedrine reduction: l-ephedrine or d-pseudoephedrine reduced via HI/red phosphorus (Nagai route) or catalytic hydrogenolysis retains stereochemistry at the α-carbon, yielding d-m**hamphetamine stereospecifically. This stereochemical fidelity is a key forensic differentiator between P2P-based (racemic) and ephedrine-based (d-enantiomer) synthetic origins.
 
 ---
 
 **8.3 BY-PRODUCT AND IMPURITY PROFILING**
 
-Forensic chemical profiling of seized methamphetamine samples enables batch-to-batch comparison, synthetic route attribution, and precursor source identification. Detailed impurity profiles are established by GC-MS and LC-MS analysis.
+Forensic chemical profiling of seized m**hamphetamine samples enables batch-to-batch comparison, synthetic route attribution, and precursor source identification. Detailed impurity profiles are established by GC-MS and LC-MS analysis.
 
 **8.3.1 Route-Specific Marker Compounds**
 
@@ -159,13 +159,13 @@ Forensic chemical profiling of seized methamphetamine samples enables batch-to-b
 
 | Analyte | RT (min) | Characteristic Ions (m/z) (relative abundance) |
 |---------|----------|----------------------------------------------|
-| Methamphetamine (free base) | ~6.8 | 58 (100), 91 (15), 134 (2), 65 (8), 56 (5) |
-| Methamphetamine (TFA-derivatised) | ~7.4 | 154 (100), 118 (35), 91 (20), 69 (10) |
+| M**hamphetamine (free base) | ~6.8 | 58 (100), 91 (15), 134 (2), 65 (8), 56 (5) |
+| M**hamphetamine (TFA-derivatised) | ~7.4 | 154 (100), 118 (35), 91 (20), 69 (10) |
 | Amphetamine | ~6.2 | 44 (100), 91 (12), 65 (6) |
 | P2P | ~7.1 | 134 (25), 91 (30), 43 (100), 65 (18), 119 (5) |
 | Dimethylamphetamine | ~7.3 | 72 (100), 91 (10), 65 (4) |
 | 1-Phenyl-2-propanol | ~7.6 | 92 (100), 91 (40), 43 (15), 65 (20) |
-| N-Formylmethamphetamine | ~10.2 | 86 (100), 91 (60), 58 (45), 118 (15) |
+| N-Formylm**hamphetamine | ~10.2 | 86 (100), 91 (60), 58 (45), 118 (15) |
 
 
 > *[Operational procedure redacted. Technical content identified: named acylating agent. Full unredacted data available to verified researchers upon request.]*
@@ -173,7 +173,7 @@ Forensic chemical profiling of seized methamphetamine samples enables batch-to-b
 
 **8.4.2 Infrared Spectroscopy (FTIR/ATR)**
 
-Methamphetamine hydrochloride exhibits characteristic absorptions:
+M**hamphetamine hydrochloride exhibits characteristic absorptions:
 
 | Wavenumber (cm⁻¹) | Assignment |
 |-------------------|------------|
@@ -188,7 +188,7 @@ The presence of the hydrochloride salt is confirmed by the broad absorption betw
 
 **8.4.3 Nuclear Magnetic Resonance (NMR)**
 
-*¹H NMR (400 MHz, DMSO-d₆, methamphetamine hydrochloride):*
+*¹H NMR (400 MHz, DMSO-d₆, m**hamphetamine hydrochloride):*
 - δ 1.02 (d, J = 6.6 Hz, 3H, CH₃–CH–N)
 - δ 2.52 (s, 3H, N–CH₃)
 - δ 2.72 (dd, J = 13.2, 9.2 Hz, 1H, CHₐ–Ph)
@@ -212,7 +212,7 @@ The presence of the hydrochloride salt is confirmed by the broad absorption betw
 
 *Internal standard:* n-Tetradecane, n-hexadecane, or N,N-dimethylaniline at known concentration (approx. 1 mg/mL).
 
-*Calibration:* Triplicate injections of methamphetamine HCl reference standard at five concentration levels spanning the expected range (typically 0.2–5.0 mg/mL in methanol or CH₂Cl₂). Linear regression of peak area ratio vs. concentration ratio; R² ≥ 0.995 required.
+*Calibration:* Triplicate injections of m**hamphetamine HCl reference standard at five concentration levels spanning the expected range (typically 0.2–5.0 mg/mL in methanol or CH₂Cl₂). Linear regression of peak area ratio vs. concentration ratio; R² ≥ 0.995 required.
 
 *Sample preparation:* Accurately weighed homogenised sample (~10–20 mg) dissolved in internal standard solution (10 mL). 1 μL injected.
 
@@ -224,7 +224,7 @@ where RF = response factor determined from calibration curve, and concentrations
 
 **8.5.2 Capillary Electrophoresis (CE)**
 
-Aqueous sample dissolved in run buffer (100 mM phosphate, pH 2.5). Direct UV detection at 210 nm. Provides separation of methamphetamine, amphetamine, ephedrine, and related β-phenethylamines with high efficiency (N > 200,000 theoretical plates). Quantification limit typically 0.01 mg/mL.
+Aqueous sample dissolved in run buffer (100 mM phosphate, pH 2.5). Direct UV detection at 210 nm. Provides separation of m**hamphetamine, amphetamine, ephedrine, and related β-phenethylamines with high efficiency (N > 200,000 theoretical plates). Quantification limit typically 0.01 mg/mL.
 
 ---
 
@@ -239,7 +239,7 @@ The origin of phenylacetone (P2P) can frequently be inferred from the trace impu
 | Benzyl cyanide + ethyl acetate (Claisen condensation) → hydrolysis/decarboxylation | Benzyl cyanide, phenylacetamide, phenylacetic acid |
 | Benzaldehyde + nitroethane (Henry reaction) → P2P oxime → hydrolysis | β-Methyl-β-nitrostyrene, P2P oxime, benzaldehyde |
 | α-Methylstyrene oxidation | α-Methylstyrene, acetophenone, 2-phenylpropionaldehyde |
-| MDP2P from safrole/isosafrole oxidation (glyoxylic acid or peracid) | Piperonal, isosafrole, MDP2P; indicative of MDMA precursor diversion |
+| MDP2P from safrole/isosafrole oxidation (glyoxylic acid or peracid) | Piperonal, isosafrole, MDP2P; indicative of M**A precursor diversion |
 
 GC-MS analysis of neutral and acidic extracts with library search and retention index matching against reference standards enables confident assignment.
 
@@ -274,7 +274,7 @@ GC-MS analysis of neutral and acidic extracts with library search and retention 
 
 - **Glycidic acid ester method:** P2P prepared from BMK glycidic acid esters (ethyl 3-oxo-2-phenylbutanoate and related compounds) via acid hydrolysis/decarboxylation has emerged as a significant circumvention pathway for P2P precursor controls.
 - **APAAN route:** α-Phenylacetoacetonitrile (APAAN) hydrolysis to P2P continues to be observed; APAAN is increasingly subject to international scheduling.
-- **Nitrostyrene reduction:** One-pot conversion of β-methyl-β-nitrostyrene to methamphetamine via reduction with LiAlH₄ or dissolving metals in the presence of methylamine, bypassing P2P isolation entirely.
+- **Nitrostyrene reduction:** One-pot conversion of β-methyl-β-nitrostyrene to m**hamphetamine via reduction with LiAlH₄ or dissolving metals in the presence of methylamine, bypassing P2P isolation entirely.
 - **Dimethylamphetamine contamination:** Increasing frequency of N,N-dimethylamphetamine as an impurity, suggesting use of technical-grade methylamine contaminated with dimethylamine or inadvertent over-alkylation conditions.
 - **Chiral profiling advances:** The routine application of chiral derivatisation with Marfey's reagent (FDAA) followed by LC-MS/MS allows simultaneous enantiomeric determination of multiple amphetamine-type stimulants from a single analytical run.
 
@@ -282,10 +282,10 @@ GC-MS analysis of neutral and acidic extracts with library search and retention 
 
 **Chapter 8 — Key References:**
 
-1. Allen, A.C. & Cantrell, T.S. (1989) Synthetic reductions in clandestine amphetamine and methamphetamine laboratories: A review. *Forensic Science International*, 42(3), 183–199.
-2. Ely, R.A. & McGrath, D.C. (1990) Lithium-ammonia reduction of ephedrine to methamphetamine: An unusual clandestine synthesis. *Journal of Forensic Sciences*, 35(3), 720–723.
-3. Skinner, H.F. (1990) Methamphetamine synthesis via hydriodic acid/red phosphorus reduction of ephedrine. *Forensic Science International*, 48(2), 123–134.
-4. Salouros, H., Collins, M., George, A.V. & Davies, S. (2010) Isolation and identification of three by-products found in methamphetamine synthesised by the Emde route. *Journal of Forensic Sciences*, 55(3), 605–615.
+1. Allen, A.C. & Cantrell, T.S. (1989) Synthetic reductions in clandestine amphetamine and m**hamphetamine laboratories: A review. *Forensic Science International*, 42(3), 183–199.
+2. Ely, R.A. & McGrath, D.C. (1990) Lithium-ammonia reduction of ephedrine to m**hamphetamine: An unusual clandestine synthesis. *Journal of Forensic Sciences*, 35(3), 720–723.
+3. Skinner, H.F. (1990) M**hamphetamine synthesis via hydriodic acid/red phosphorus reduction of ephedrine. *Forensic Science International*, 48(2), 123–134.
+4. Salouros, H., Collins, M., George, A.V. & Davies, S. (2010) Isolation and identification of three by-products found in m**hamphetamine synthesised by the Emde route. *Journal of Forensic Sciences*, 55(3), 605–615.
 5. Kunalan, V., Kerr, W.J. & NicDaéid, N. (2012) Investigation of the reaction impurities associated with methylamphetamine synthesised using the Nagai method. *Analytical Chemistry*, 84(13), 5744–5752.
 6. Stojanovska, N., Fu, S., Tahtouh, M., Kelly, T., Beavis, A. & Kirkbride, K.P. (2013) A review of impurity profiling and synthetic route of manufacture of methylamphetamine, 3,4-methylenedioxymethylamphetamine, amphetamine, dimethylamphetamine and p-methoxyamphetamine. *Forensic Science International*, 224(1–3), 8–26.
 7. United Nations Office on Drugs and Crime (2023) *World Drug Report 2023 — Stimulants*. UNODC, Vienna.

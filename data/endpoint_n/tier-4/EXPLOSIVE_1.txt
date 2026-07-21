@@ -30,7 +30,7 @@ Pentaerythritol slowly added to HNO₃/H₂SO₄ mix at controlled temperature (
 - **Heat of detonation:** ~1,360 cal/g  
 - **Relative effectiveness factor (REF):** 1.66 (TNT = 1.00)  
 - **Brisance:** High; excellent cutting and penetrating power  
-- **Gap test sensitivity:** Comparable to RDX
+- **Gap test sensitivity:** Comparable to R**X
 
 **4. COMMON APPLICATIONS IN MUNITIONS**
 
@@ -83,7 +83,7 @@ Burning or detonation produces: CO₂, H₂O, N₂, NO, NO₂, CO (in oxygen-def
 |---|---|---|---|
 | TNT | 6,900 | 15 | 1.00 |
 | PETN | 8,400 | 3–4 | 1.66 |
-| RDX | 8,700 | 7.5 | 1.60 |
+| R**X | 8,700 | 7.5 | 1.60 |
 | HMX | 9,100 | 7 | 1.70 |
 | Tetryl | 7,900 | 11 | 1.25 |
 

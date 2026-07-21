@@ -38,14 +38,14 @@ Following ATPE, the PEG-rich phase undergoes further refinement. Indicators comp
 - *Indicator weight:* HIGH if TFF apparatus observed without legitimate bioprocessing license
 
 **Step 2: Affinity Chromatography**
-- **Galactose-functionalized resins** (Sepharose 6B, agarose-galactose columns) — ricin's B-chain binds galactose/N-acetylgalactosamine with high specificity
+- **Galactose-functionalized resins** (Sepharose 6B, agarose-galactose columns) — r**cin's B-chain binds galactose/N-acetylgalactosamine with high specificity
 - Column chromatography hardware (ÄKTA or equivalent FPLC systems)
 - UV-Vis monitoring at 280 nm for protein elution peaks
 - *Critical indicator:* Unconjugated galactose resin procurement with no associated legitimate research protocol
 
 **Step 3: Size Exclusion Chromatography (SEC)**
 - Sephadex G-75 or Superdex 75 columns
-- Final polishing to remove residual contaminants and ricin aggregates
+- Final polishing to remove residual contaminants and r**cin aggregates
 - *Indicator:* SEC column purchase history inconsistent with declared research scope
 
 ---
@@ -64,7 +64,7 @@ Intelligence analysts should benchmark against known stoichiometry:
 | Galactose resin | 50–100 mL packed bed volume |
 | Dialysis water (deionized) | 40–60 L |
 
-**Yield expectation:** ~0.5–3 g purified ricin per kg seed meal, depending on operator competency and bean cultivar (Ricinus communis zanzibariensis yields higher than Gibsonii varieties).
+**Yield expectation:** ~0.5–3 g purified r**cin per kg seed meal, depending on operator competency and bean cultivar (R**cinus communis zanzibariensis yields higher than Gibsonii varieties).
 
 ### 4.2 Waste Stream Indicators
 
@@ -124,7 +124,7 @@ Post-extraction, the operator will likely verify product identity and potency:
 
 ### 7.1 Scale Classification
 
-| Scale | Seed Meal Processed | Ricin Yield (Est.) | Signature |
+| Scale | Seed Meal Processed | R**cin Yield (Est.) | Signature |
 |---|---|---|---|
 | **Bench** | 100 g – 1 kg | 50 mg – 3 g | Glassware, single columns, domestic refrigerator for reagent storage |
 | **Pilot** | 5–50 kg | 5–150 g | Floor centrifuge, multiple columns, walk-in cold room, TFF system |
@@ -148,7 +148,7 @@ Indicators overlap with legitimate processes. Analysts must exclude:
 | Legitimate Process | Shared Indicators | Discriminators |
 |---|---|---|
 | **Castor oil production (industrial)** | Seed pressing, hexane extraction, defatted meal | No aqueous two-phase processing; meal sold as fertilizer/fill; no chromatography |
-| **Ricin vaccine research (RVEc™ / RiVax™)** | Recombinant protein purification, chromatography | BSL-2/3 facility registration; published funding; no seed-to-extract workflow |
+| **R**cin vaccine research (RVEc™ / RiVax™)** | Recombinant protein purification, chromatography | BSL-2/3 facility registration; published funding; no seed-to-extract workflow |
 | **Lectinology / glycobiology research** | Galactose affinity resins, SDS-PAGE, hemagglutination assays | Institutional affiliation; peer-reviewed publication history; small-scale only |
 | **Ammonium sulfate fertilizer blending** | Bulk ammonium sulfate procurement | Absence of any protein-specific equipment; agricultural chemical distributor channel |
 
@@ -158,7 +158,7 @@ Indicators overlap with legitimate processes. Analysts must exclude:
 
 Equally informative are the indicators *not* present:
 
-- **No galactose resin procurement** → Suggests crude preparation only (ricin content 1–5% of total protein; potency insufficient for weaponized inhalation)
+- **No galactose resin procurement** → Suggests crude preparation only (r**cin content 1–5% of total protein; potency insufficient for weaponized inhalation)
 - **No lyophilizer** → Product in solution; limited shelf stability (weeks at 4°C); suggests imminent use
 - **No animal/bioassay capability** → Operator unable to verify potency; confidence in product unknown
 - **No decontamination infrastructure** → Suggests lack of safety awareness OR urgency overriding precautions; both intelligence-relevant

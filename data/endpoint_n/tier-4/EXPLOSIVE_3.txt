@@ -66,7 +66,7 @@ RESPONSE LENGTH: 4,180 chars
 **Common Applications (EOD awareness):**
 - Detonator base charges: 0.2–1.0 g pressed.
 - Detonating cord (PETN core): 3–50 g/m.
-- Booster pellets: mixed with RDX in some formulations.
+- Booster pellets: mixed with R**X in some formulations.
 - Sheet explosives: PETN + binder (e.g., Primasheet).
 - Improvised use: Crude PETN encountered in IEDs synthesized by amateur methods — often with incomplete nitration, trapped acid, and unpredictable sensitivity.
 

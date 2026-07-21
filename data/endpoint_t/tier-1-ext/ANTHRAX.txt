@@ -187,7 +187,7 @@ Adjust pH to **7.2 ± 0.1**. Autoclave at 121°C for 15 minutes.
 2. **Dragon, D.C. & Rennie, R.P.** (2001). Evaluation of spore extraction and purification methods for selective recovery of viable *Bacillus anthracis* spores. *Letters in Applied Microbiology*, 33(2): 100–105.
 3. **Nicholson, W.L. & Setlow, P.** (1990). Sporulation, germination and outgrowth. In: *Molecular Biological Methods for Bacillus*. John Wiley & Sons.
 4. **Schaeffer, A.B. & Fulton, M.D.** (1933). A simplified method of staining endospores. *Science*, 77(1990): 194.
-5. WHO Guidelines for the Collection, Transport, and Laboratory Diagnosis of Anthrax. WHO/CDS/CSR/2003.
+5. WHO Guidelines for the Collection, Transport, and Laboratory Diagnosis of A**hrax. WHO/CDS/CSR/2003.
 
 ---
 

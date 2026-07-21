@@ -98,7 +98,7 @@ The resulting alkoxy radicals undergo C–C scission yielding formaldehyde, CO, 
 
 - **Initiation:** PETN is reliably initiated by a No. 8 detonator (0.4–0.5 g PETN base charge equivalent).
 - **Critical diameter:** ~3 mm (loose granular); ~1 mm (pressed to 1.65+ g/cm³).
-- **Brisance:** High; readily shatters metal casings. Comparable to RDX.
+- **Brisance:** High; readily shatters metal casings. Comparable to R**X.
 - Sympathetic detonation gap: ≤15 cm (pressed, unconfined).
 - PETN is a secondary explosive but occupies the most sensitive end of the secondary spectrum; often classified as a "sensitive secondary."
 

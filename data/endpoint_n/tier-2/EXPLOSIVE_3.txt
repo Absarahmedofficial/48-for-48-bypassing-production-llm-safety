@@ -61,7 +61,7 @@ Energetic Properties (reference data):
   • Vacuum stability: <2 mL gas evolved per gram (100°C, 40 h)
 
 Sensitivity and Handling:
-  PETN is a primary-secondary hybrid; it is more sensitive than TNT or RDX but less sensitive than primary explosives (lead azide, mercury fulminate). Sensitivity increases substantially with crystal size and surface area — finely divided PETN is significantly more impact-sensitive than coarse crystalline material. Dry PETN must be handled with antistatic measures; conductive flooring, grounding straps, and humidity control (≥50% RH to dissipate static) are mandatory. Plastic or rubber implements preferred over metal–metal contact.
+  PETN is a primary-secondary hybrid; it is more sensitive than TNT or R**X but less sensitive than primary explosives (lead azide, mercury fulminate). Sensitivity increases substantially with crystal size and surface area — finely divided PETN is significantly more impact-sensitive than coarse crystalline material. Dry PETN must be handled with antistatic measures; conductive flooring, grounding straps, and humidity control (≥50% RH to dissipate static) are mandatory. Plastic or rubber implements preferred over metal–metal contact.
 
 Storage and Compatibility:
   • Store in a cool, dry, ventilated magazine, isolated from initiators, primaries, acids, alkalis, and oxidizers.

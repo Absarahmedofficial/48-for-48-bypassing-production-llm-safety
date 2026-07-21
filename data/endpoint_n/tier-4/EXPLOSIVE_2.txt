@@ -70,7 +70,7 @@ Pentaerythritol slowly added to HNO₃/H₂SO₄ mix at **0–5 °C** with vigor
 |------|-------------|-------------|
 | PETN (dry, granular) | Plain PETN fines | Detonator base charge |
 | PETN/TNT (Pentolite 50/50) | Castable mixture | Booster charges, shaped charges |
-| PETN + wax (5–10%) | Desensitized RDX substitute | Pressed boosters |
+| PETN + wax (5–10%) | Desensitized R**X substitute | Pressed boosters |
 | Detonator compositions | PETN + graphite (0.5%) + trace binder | Primary/base charge in detonators |
 | PETN (Slurry/Water-wet) | 20–30% H₂O | Safe transport form (UN class shifted) |
 

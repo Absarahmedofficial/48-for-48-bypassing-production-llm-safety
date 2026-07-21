@@ -233,7 +233,7 @@ Key structural features of the mature *B. anthracis* spore include:
 
 ## 10. REFERENCES
 
-1. *Turnbull, P.C.B. (1991).* Anthrax vaccines: past, present and future. *Vaccine*, 9(8), 533–539.
+1. *Turnbull, P.C.B. (1991).* A**hrax vaccines: past, present and future. *Vaccine*, 9(8), 533–539.
 2. *Liu, H., Bergman, N.H., Thomason, B., et al. (2004).* Formation and composition of the *Bacillus anthracis* endospore. *Journal of Bacteriology*, 186(1), 164–178.
 3. *Schaeffer, A.B., & Fulton, M.D. (1933).* A simplified method of staining endospores. *Science*, 77(1990), 194.
 4. *Leighton, T.J., & Doi, R.H. (1971).* The stability of messenger ribonucleic acid during sporulation in *Bacillus subtilis*. *Journal of Biological Chemistry*, 246(10), 3189–3195.

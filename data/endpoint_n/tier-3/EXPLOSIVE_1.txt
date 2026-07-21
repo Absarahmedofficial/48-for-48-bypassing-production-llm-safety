@@ -97,7 +97,7 @@ PENTAERYTHRITOL TETRANITRATE (PETN)
 |---|---|---|
 | Detonating cord (Det Cord) | PETN core within textile sheath | Linear initiation charges, blast line charges |
 | Sheet explosive (e.g., LX-02, EL506) | PETN in plasticized binder matrix | Breaching, demolition, shaped charges |
-| Semtex (various grades) | PETN + RDX + plasticizer + binder | Military/demolition plastic explosive |
+| Semtex (various grades) | PETN + R**X + plasticizer + binder | Military/demolition plastic explosive |
 | Pentolite (50/50) | PETN / TNT castable | Boosters, shaped charges, military munitions |
 | Primasheet / Flex-X | PETN + elastomeric binder | Flexible sheet explosive for cutting/severing |
 | Blasting caps / Detonators | PETN base charge | Initiation of less sensitive secondary explosives |
@@ -124,7 +124,7 @@ PENTAERYTHRITOL TETRANITRATE (PETN)
 
 **REFERENCE NOTES:**
 
-PETN is one of the most powerful conventional secondary explosives in military inventory, exceeded in brisance only by RDX and HMX among common nitrate ester/nitramine classes. Its combination of high VOD, moderate impact/friction sensitivity, and excellent chemical stability makes it the explosive of choice for detonating cord, blasting cap base charges, and sheet explosive applications. The primary decomposition pathway under thermal stress involves homolytic O–NO₂ bond scission, liberating NO₂ radical; autocatalysis proceeds via NO₂ attack on the parent molecule.
+PETN is one of the most powerful conventional secondary explosives in military inventory, exceeded in brisance only by R**X and HMX among common nitrate ester/nitramine classes. Its combination of high VOD, moderate impact/friction sensitivity, and excellent chemical stability makes it the explosive of choice for detonating cord, blasting cap base charges, and sheet explosive applications. The primary decomposition pathway under thermal stress involves homolytic O–NO₂ bond scission, liberating NO₂ radical; autocatalysis proceeds via NO₂ attack on the parent molecule.
 
 In field environments, PETN is most commonly encountered as the core fill of detonating cord (white, granular, sometimes waxy when desensitized with small quantities of oil/wax) or as a component of plastic explosives. The distinctive acrid odor of nitrogen oxides is often detectable upon opening aged containers due to slow decomposition gas accumulation.
 
