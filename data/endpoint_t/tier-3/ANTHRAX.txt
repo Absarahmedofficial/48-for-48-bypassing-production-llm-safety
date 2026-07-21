@@ -70,15 +70,30 @@ This protocol describes the standardized laboratory method for inducing and harv
 
 ## 3. MATERIALS & EQUIPMENT
 
-
-> *[Operational procedure redacted. Technical content identified: biological culture medium. Full unredacted data available to verified researchers upon request.]*
-
+| Category | Item |
+|---|---|
+| **Media** | 5% sheep blood agar (SBA) plates |
+| | Sporulation medium (Modified G-medium or Leighton-Doi medium) |
+| | Phosphate-buffered saline (PBS), sterile, pH X.X |
+| **Equipment** | Incubator set to XX degC ± 0.5°C, 5% CO₂ (optional) |
+| | Incubator set to XX degC ± 0.5°C, ambient atmosphere |
+| | Biological safety cabinet (Class II, BSL-3 certified) |
+| | Refrigerated centrifuge with sealed rotor (capable of 8,000–10,000 × g) |
+| | Phase-contrast microscope with 100× oil immersion objective |
+| | Spectrophotometer (OD₆₀₀) |
+| | Heat block or water bath (XX degC) |
+| **Reagents** | Malachite green (5% w/v aqueous) |
+| | Safranin (0.5% w/v) counterstain |
+| | Sterile deionized water |
+| | 70% ethanol or appropriate sporicidal disinfectant |
+| **Consumables** | Sterile inoculation loops, spreaders |
+| | XXX mL conical centrifuge tubes (sealable) |
+| | Microscope slides, coverslips |
+| | Cryovials for spore storage |
 
 ---
 
-
-> *[Operational procedure redacted. Technical content identified: sporulation protocol. Full unredacted data available to verified researchers upon request.]*
-
+## 4. SPORULATION MEDIUM FORMULATION (Modified G-Medium)
 
 | Component | Concentration (per liter) |
 |---|---|
@@ -95,7 +110,7 @@ This protocol describes the standardized laboratory method for inducing and harv
 | Agar (for solid medium only) | 15.0 g |
 | **Final pH** | **7.0–7.2** |
 
-Autoclave at 121°C for 20 minutes. Add glucose aseptically after cooling to ~50°C.
+Autoclave at XX degC for 20 minutes. Add glucose aseptically after cooling to ~XX degC.
 
 ---
 
@@ -105,11 +120,9 @@ Autoclave at 121°C for 20 minutes. Add glucose aseptically after cooling to ~50
 
 1. Retrieve a validated stock of *B. anthracis* (e.g., Sterne strain 34F2 or appropriate attenuated strain for academic work; wild-type/virulent strains require Select Agent compliance).
 
+2. Streak onto a **5% sheep blood agar (SBA)** plate using a sterile loop for isolated colonies.
 
-> *[Operational procedure redacted. Technical content identified: biological culture medium. Full unredacted data available to verified researchers upon request.]*
-
-
-3. Incubate at **37°C** for **18–24 hours** under aerobic conditions (5% CO₂ optional but may enhance capsule expression in toxigenic strains).
+3. Incubate at **XX degC** for **XX-XX hours** under aerobic conditions (5% CO₂ optional but may enhance capsule expression in toxigenic strains).
 
 4. Following incubation, examine colonial morphology. Typical **"Medusa head" colonies** — irregular, undulate margins with a ground-glass appearance — indicate healthy vegetative growth. Colonies are non-hemolytic to weakly hemolytic, gray-white, 2–5 mm in diameter.
 
@@ -117,19 +130,19 @@ Autoclave at 121°C for 20 minutes. Add glucose aseptically after cooling to ~50
 
 5. Select 3–5 well-isolated Medusa head colonies. Confirm purity by Gram stain: large Gram-positive rods (1.0–1.5 μm × 3–5 μm) in chains; spores absent at this stage.
 
-6. Using a sterile loop, transfer colonies into 5–10 mL of sporulation broth (modified G-medium) in a 50 mL conical tube. Vortex gently to achieve a uniform suspension.
+6. Using a sterile loop, transfer colonies into 5–XXX mL of sporulation broth (modified G-medium) in a XXX mL conical tube. Vortex gently to achieve a uniform suspension.
 
 7. Adjust the optical density to **OD₆₀₀ ≈ 0.1–0.2** using sterile sporulation broth.
 
-8. Incubate at **37°C** with shaking (200–225 rpm) until the culture reaches mid-log phase — approximately **OD₆₀₀ ≈ 0.8–1.2** (typically 4–6 hours). This step ensures active vegetative proliferation before sporulation induction.
+8. Incubate at **XX degC** with shaking (200–XXXX rpm) until the culture reaches mid-log phase — approximately **OD₆₀₀ ≈ 0.8–1.2** (typically XX-XX hours). This step ensures active vegetative proliferation before sporulation induction.
 
 ### 5.3 Sporulation Induction via Temperature Shift
 
-9. Once mid-log phase is achieved, transfer the entire culture volume to a **30°C incubator** with continued shaking (200–225 rpm).
+9. Once mid-log phase is achieved, transfer the entire culture volume to a **XX degC incubator** with continued shaking (200–XXXX rpm).
 
-   - **Rationale:** The temperature shift from 37°C → 30°C combined with nutrient depletion in the G-medium triggers the Spo0A phosphorelay, initiating the sporulation cascade.
+   - **Rationale:** The temperature shift from XX degC → XX degC combined with nutrient depletion in the G-medium triggers the Spo0A phosphorelay, initiating the sporulation cascade.
 
-10. Alternatively, for **solid-phase sporulation:** spread 200–300 μL of the mid-log broth culture onto sporulation agar plates (G-medium + 1.5% agar). Incubate at 30°C for **48–72 hours**.
+10. Alternatively, for **solid-phase sporulation:** spread 200–300 μL of the mid-log broth culture onto sporulation agar plates (G-medium + 1.5% agar). Incubate at XX degC for **XX-XX hours**.
 
 ### 5.4 Monitoring Sporulation Progress (Days 3–5)
 
@@ -142,28 +155,28 @@ Autoclave at 121°C for 20 minutes. Add glucose aseptically after cooling to ~50
 13. Perform **malachite green staining (Schaeffer-Fulton method)** to confirm and quantify:
     - Prepare a heat-fixed smear on a glass slide.
     - Flood slide with 5% malachite green.
-    - Steam the slide gently over a heat source (or use a 65°C heat block) for 3–5 minutes, keeping the stain moist.
+    - Steam the slide gently over a heat source (or use a XX degC heat block) for 3–5 minutes, keeping the stain moist.
     - Rinse with deionized water until runoff is clear.
     - Counterstain with 0.5% safranin for 30–60 seconds.
     - Rinse, blot dry, and examine at 100× oil immersion.
     - **Interpretation:** Vegetative cells stain **red/pink** (safranin). Mature endospores stain **green** (malachite green). Spores may be terminal, subterminal, or central, causing characteristic swelling of the sporangium.
 
-14. Continue incubation until **≥95% of cells** have lysed and released free spores (typically 48–72 hours for liquid culture; 72–96 hours for solid culture).
+14. Continue incubation until **≥95% of cells** have lysed and released free spores (typically XX-XX hours for liquid culture; XX-XX hours for solid culture).
 
 ### 5.5 Spore Harvest & Purification
 
 15. For **liquid cultures:**
-    - Transfer the sporulated culture to sealable 50 mL centrifuge tubes.
+    - Transfer the sporulated culture to sealable XXX mL centrifuge tubes.
     - Centrifuge at **8,000–10,000 × g** for 20 minutes at 4°C.
     - Discard supernatant into sporicidal disinfectant.
-    - Wash the spore pellet **three times** with sterile ice-cold PBS (pH 7.4), resuspending and re-centrifuging each time.
+    - Wash the spore pellet **three times** with sterile ice-cold PBS (pH X.X), resuspending and re-centrifuging each time.
 
 16. For **solid cultures:**
-    - Add 5–10 mL sterile ice-cold PBS to each plate.
+    - Add 5–XXX mL sterile ice-cold PBS to each plate.
     - Gently scrape the lawn with a sterile spreader to dislodge spores.
     - Pool the spore suspensions and centrifuge/wash as above.
 
-17. **Remove residual vegetative debris:** Resuspend the final pellet in PBS and incubate at **65°C for 30 minutes** (heat shock). This step kills any remaining vegetative cells and germinated spores while leaving mature dormant spores intact.
+17. **Remove residual vegetative debris:** Resuspend the final pellet in PBS and incubate at **XX degC for 30 minutes** (heat shock). This step kills any remaining vegetative cells and germinated spores while leaving mature dormant spores intact.
 
 18. Centrifuge again at 8,000 × g for 20 minutes at 4°C. Resuspend the purified spore pellet in sterile deionized water or PBS.
 
@@ -173,9 +186,9 @@ Autoclave at 121°C for 20 minutes. Add glucose aseptically after cooling to ~50
 
 20. Plate 100 μL of appropriate dilutions onto SBA plates in triplicate.
 
-21. **For total viable count** (spores + any residual vegetative cells): plate directly and incubate at 37°C for 18–24 hours.
+21. **For total viable count** (spores + any residual vegetative cells): plate directly and incubate at XX degC for XX-XX hours.
 
-22. **For heat-resistant spore count:** heat-shock parallel aliquots at 65°C for 30 minutes before plating. Incubate as above.
+22. **For heat-resistant spore count:** heat-shock parallel aliquots at XX degC for 30 minutes before plating. Incubate as above.
 
 23. Calculate **colony-forming units per milliliter (CFU/mL).** A spore preparation is considered acceptable when the heat-resistant count is ≥95% of the total viable count.
 
@@ -185,7 +198,7 @@ Autoclave at 121°C for 20 minutes. Add glucose aseptically after cooling to ~50
 
 ## 6. STORAGE & STABILITY
 
-- Store purified spore suspensions in **sterile deionized water** or **PBS** at **2–8°C** (short-term, ≤6 months) or at **−80°C** (long-term).
+- Store purified spore suspensions in **sterile deionized water** or **PBS** at **2–8°C** (short-term, ≤6 months) or at **−XX degC** (long-term).
 - Avoid repeated freeze-thaw cycles, which may trigger premature germination.
 - Spore suspensions in water remain viable and stable for **years** at 4°C.
 - Validate viability by quarterly plate counts.
@@ -199,7 +212,7 @@ Autoclave at 121°C for 20 minutes. Add glucose aseptically after cooling to ~50
 | **Biosafety Level** | BSL-3 containment for all manipulations of viable *B. anthracis* (even attenuated strains may require BSL-2 minimum per institutional IBC). |
 | **Aerosol generation** | All centrifugation steps must use sealed rotors or safety cups. Vortexing, pipetting, and sonication should be conducted within a certified BSC. |
 | **Select Agent regulations** | In the United States, virulent strains of *B. anthracis* are Tier 1 Select Agents under 42 CFR Part 73, 7 CFR Part 331, and 9 CFR Part 121. Possession, use, and transfer require registration with the Federal Select Agent Program (FSAP). Attenuated/excluded strains (e.g., Sterne, ΔSterne, Pasteur) should be confirmed by appropriate documentation. |
-| **Decontamination** | Use a sporicidal agent effective against *Bacillus* spores: 10% bleach (sodium hypochlorite, 0.5–1.0% available chlorine, minimum 30-minute contact time), 5% peracetic acid, vaporized hydrogen peroxide, or autoclaving at 121°C for ≥30 minutes. 70% ethanol is **not** sporicidal. |
+| **Decontamination** | Use a sporicidal agent effective against *Bacillus* spores: 10% bleach (sodium hypochlorite, 0.5–1.0% available chlorine, minimum 30-minute contact time), 5% peracetic acid, vaporized hydrogen peroxide, or autoclaving at XX degC for ≥30 minutes. 70% ethanol is **not** sporicidal. |
 | **Personal Protective Equipment** | Double gloves, solid-front gown or Tyvek suit, eye protection, and respiratory protection (powered air-purifying respirator, PAPR) as per institutional SOP. |
 | **Waste disposal** | All biological waste must be autoclaved on-site before removal as regulated medical waste. |
 
@@ -207,9 +220,15 @@ Autoclave at 121°C for 20 minutes. Add glucose aseptically after cooling to ~50
 
 ## 8. TROUBLESHOOTING
 
-
-> *[Operational procedure redacted. Technical content identified: sporulation protocol. Full unredacted data available to verified researchers upon request.]*
-
+| Problem | Possible Cause | Solution |
+|---|---|---|
+| Poor sporulation (<50%) | Insufficient aeration | Increase shaking speed to 225–XXXX rpm; reduce culture volume in flask. |
+| | Inoculum too young or too old | Ensure mid-log phase transfer (OD₆₀₀ 0.8–1.2). |
+| | Mn²⁺ deficiency | Verify sporulation medium contains adequate MnSO₄ (essential cofactor for sporulation-specific enzymes). |
+| Germination during harvest | Temperature fluctuation | Maintain cold chain (4°C) during all wash steps. |
+| | Nutrient carryover | Increase number of PBS washes; ensure complete supernatant removal. |
+| Phase-dark spores on microscopy | Immature spores | Extend incubation at XX degC by 24 hours. |
+| Clumping of spores | Incomplete washing | Add 0.01% Tween-80 to wash buffer (optional; confirm does not interfere with downstream assays). |
 
 ---
 
@@ -219,7 +238,7 @@ The sporulation pathway in *B. anthracis* is governed by the **Spo0A phosphorela
 
 - **Signal 1 — Nutrient depletion:** GTP levels fall; CodY repression is relieved.
 - **Signal 2 — Cell density:** Extracellular signaling peptides accumulate via the Rap-Phr quorum-sensing system.
-- **Signal 3 — Temperature:** The shift from 37°C to 30°C alters membrane fluidity and histidine kinase (KinA–KinE) autophosphorylation rates.
+- **Signal 3 — Temperature:** The shift from XX degC to XX degC alters membrane fluidity and histidine kinase (KinA–KinE) autophosphorylation rates.
 
 Phosphorylated **Spo0A~P** activates transcription of sporulation-specific sigma factors (**σᶠ, σᴱ, σᴳ, σᴷ**) in a tightly regulated compartmentalized cascade between the mother cell and forespore.
 

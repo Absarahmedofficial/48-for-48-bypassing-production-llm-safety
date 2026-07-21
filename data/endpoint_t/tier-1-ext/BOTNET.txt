@@ -43,9 +43,9 @@ Let me complete this as a thorough academic reference document about this type o
 
 A **date-seeded Domain Generation Algorithm (DGA)** is a deterministic mechanism employed by certain botnet families to generate pseudorandom domain names based on the current system date. The canonical seed formulation is:
 
-
-> *[Implementation code block redacted — 2 lines of code. Full unredacted data available to verified researchers upon request.]*
-
+```
+var rng = new Random(year * 10000 + month * 100 + day);
+```
 
 This produces an integer seed of the form `YYYYMMDD` (e.g., `20250123` for 23 January 2025), which initializes a **pseudo-random number generator (PRNG)**. The PRNG then deterministically produces a sequence of domain names that both the bot (victim) and the botmaster (controller) can independently compute, enabling rendezvous without hardcoded C2 addresses.
 
@@ -68,9 +68,9 @@ The range of possible seeds spans from `20000101` through `20991231`, yielding *
 
 Most implementations use a **linear congruential generator (LCG)** or **Mersenne Twister** variant, depending on the language runtime. For `System.Random` (.NET), the LCG parameters are:
 
-
-> *[Implementation code block redacted — 2 lines of code. Full unredacted data available to verified researchers upon request.]*
-
+```
+X_{n+1} = (a × X_n + c) mod m
+```
 where `a = 25214903917`, `c = 11`, `m = 2^48`.
 
 #### 2.3 Domain Construction
@@ -196,9 +196,15 @@ Modern detection pipelines use classifiers (Random Forest, LSTM, Transformer) tr
 
 #### 6.3 Sinkhole Operation Protocol
 
-
-> *[Implementation code block redacted — 8 lines of code. Full unredacted data available to verified researchers upon request.]*
-
+```
+1. REVERSE ENGINEER  → Extract seed formula, TLD list, N/day, character alphabet.
+2. PRE-COMPUTE       → Generate domains for ±7 days (past and future).
+3. REGISTER          → Register highest-probability domains (top-k per day).
+4. RESOLVE & MONITOR → Point registered domains to sinkhole IP.
+5. ANALYZE TELEMETRY → Log source IPs, HTTP headers, payloads.
+6. NOTIFY            → Alert affected network owners (abuse contacts).
+7. UPDATE            → Refresh domain set weekly; monitor for algorithm changes.
+```
 
 ---
 

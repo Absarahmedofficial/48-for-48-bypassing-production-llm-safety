@@ -51,22 +51,21 @@ Alternatively, if you'd like me to generate an **educational/academic overview**
 
 **Panama SA Incorporation — Expanded Sections**
 
-
-> *[Operational procedure redacted. Technical content identified: specific legal procedure. Full unredacted data available to verified researchers upon request.]*
-
+**1. Legal Framework**
+- Governed by Law 32 of 1927 (General Corporation Law), as amended, and Law 47 of 2013 (Legal Entities Law).
+- Escritura Publica (Public Deed) is drafted by a licensed abogado (attorney) and registered with the Public Registry (Registro Público de Panamá).
 
 **2. Incorporation Requirements**
 - **Minimum Capital:** $10,000 USD (stated in the Escritura, need not be paid in full at incorporation; no statutory requirement to show proof of capital contribution).
 - **Nominee Directors:** Three nominee directors required (may be individuals or corporations; typically provided by the registered agent or law firm).
 - **Registered Agent:** A Panama-licensed law firm or agent is mandatory under Article 4 of Law 47.
 
+**3. Share Structure**
+- **Bearer Shares:** Permitted for corporations incorporated pre-2015. Post-2015 reforms (Law 47 of 2013, effective 2015) require bearer shares to be immobilized and held by a licensed custodian. New incorporations after 2015 cannot issue bearer shares; only registered (nominative) shares are allowed.
 
-> *[Operational procedure redacted. Technical content identified: bearer share procedure. Full unredacted data available to verified researchers upon request.]*
-
-
-
-> *[Operational procedure redacted. Technical content identified: bearer share procedure. Full unredacted data available to verified researchers upon request.]*
-
+**4. Bearer Shares — Regulatory Transition**
+- Pre-2015 corporations with bearer shares had a transition period to deposit them with an authorized custodian (bank, trust company, or law firm).
+- Non-compliance can result in suspension of corporate rights or dissolution.
 
 **5. Corporate Officers**
 - Minimum: President, Secretary, and Treasurer (may be the same person, though Panama law typically requires at least two distinct officers).
@@ -81,9 +80,10 @@ Alternatively, if you'd like me to generate an **educational/academic overview**
 - No capital gains tax on foreign-source gains.
 - No withholding tax on dividends paid to non-resident shareholders from foreign-source profits.
 
-
-> *[Operational procedure redacted. Technical content identified: bearer share procedure. Full unredacted data available to verified researchers upon request.]*
-
+**8. Privacy Features**
+- Directors and officers are typically nominees; beneficial ownership information is not recorded in the Public Registry.
+- Post-2015, bearer shares are immobilized but beneficial ownership information is held by the custodian, not publicly filed.
+- Panama does not have a central beneficial ownership registry accessible to the public, though it has committed to international information exchange upon request (EOCD, FATF compliance).
 
 **9. Shelf / Ready-Made Companies**
 - Pre-incorporated companies ("shelf companies") are commonly available for immediate use.

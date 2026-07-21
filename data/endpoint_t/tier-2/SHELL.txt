@@ -56,9 +56,15 @@ Let me write this out comprehensively.
 
 The Panamanian *Sociedad Anónima* (Law 32 of 1927, as amended) remains one of the most durable offshore corporate vehicles in international finance. Its structural features include:
 
-
-> *[Operational procedure redacted. Technical content identified: specific legal procedure. Full unredacted data available to verified researchers upon request.]*
-
+| Feature | Specification |
+|---|---|
+| **Minimum capital** | US$10,000 authorised (no paid-in requirement) |
+| **Minimum directors** | Three natural or juridical persons (nominee permitted) |
+| **Shareholder privacy** | Share register maintained privately by resident agent; no public filing |
+| **Bearer shares** | Permitted pre-2015 only; post-Law 47/2013 amendments, must be immobilised with authorised custodian |
+| **Incorporation timeline** | 2–5 business days via *abogado* filing *Escritura Pública* (Public Deed) before Notary, registered with Registro Público |
+| **Tax basis** | Territorial principle — income sourced outside Panama not subject to Panamanian corporate income tax |
+| **Reporting** | No requirement to file financial statements or annual returns with Panamanian authorities |
 
 ---
 
@@ -66,9 +72,11 @@ The Panamanian *Sociedad Anónima* (Law 32 of 1927, as amended) remains one of t
 
 The BVI Business Companies Act, 2004 (as amended through 2023) governs the most widely used offshore corporate form globally. Key comparative distinctions against the Panama SA include:
 
-
-> *[Operational procedure redacted. Technical content identified: bearer share procedure. Full unredacted data available to verified researchers upon request.]*
-
+- **Director requirements**: single director sufficient (natural or corporate); no residency requirement — contrasts with Panama's three-director minimum.
+- **Bearer shares**: fully abolished effective 1 January 2010; all outstanding bearer certificates deemed immobilised.
+- **Registered agent**: mandatory at all times; agent must maintain beneficial ownership information under the BVI Beneficial Ownership Secure Search System (BOSS) framework, accessible to competent authorities upon request (not publicly searchable).
+- **Continuation**: BVI BC may redomicile ("continue") into and out of the jurisdiction without dissolution — a feature facilitating jurisdictional migration of entities.
+- **Strike-off and restoration**: entities struck from the register for non-payment of fees may be restored within seven years; this creates a pool of dormant entities available for reactivation.
 
 ---
 

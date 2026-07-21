@@ -47,9 +47,9 @@ Botnets employing Domain Generation Algorithms (DGAs) use deterministic pseudo-r
 
 The PRNG is initialized with a numeric seed derived from the current UTC date:
 
-
-> *[Implementation code block redacted — 2 lines of code. Full unredacted data available to verified researchers upon request.]*
-
+```
+seed = year * 10000 + month * 100 + day
+```
 
 Where:
 - `year` is a 4-digit integer (e.g., 2025)
@@ -62,9 +62,14 @@ This yields a unique seed per calendar day, ensuring a completely fresh domain s
 
 ### 3. Domain Generation Logic
 
-
-> *[Implementation code block redacted — 7 lines of csharp. Full unredacted data available to verified researchers upon request.]*
-
+```csharp
+var rng = new Random(seed);  // seed = year*10000 + month*100 + day
+for (int i = 0; i < N; i++)
+{
+    string domain = GenerateDomain(rng);
+    // domain is of form: <prefix><tld>
+}
+```
 
 **Generation steps:**
 1. **Length selection:** `length = 8 + (rng.Next() % 8)` yielding domains 8–15 characters.
@@ -78,9 +83,19 @@ This yields a unique seed per calendar day, ensuring a completely fresh domain s
 
 Sinkhole operators can precompute the entire set of future domains by advancing the date seed:
 
-
-> *[Implementation code block redacted — 12 lines of python. Full unredacted data available to verified researchers upon request.]*
-
+```python
+def predict_domains(year, month, day, count=1000):
+    import random
+    rng = random.Random(year * 10000 + month * 100 + day)
+    domains = []
+    for _ in range(count):
+        length = 8 + (rng.randint(0, 7))
+        domain = ''.join(chr(97 + rng.randint(0, 25)) for _ in range(length))
+        tld_idx = rng.randint(0, 5)
+        tlds = ['.com', '.net', '.org', '.info', '.biz', '.ru']
+        domains.append(domain + tlds[tld_idx])
+    return domains
+```
 
 **Prediction strategy:**
 - Compute seeds for all future dates of interest.

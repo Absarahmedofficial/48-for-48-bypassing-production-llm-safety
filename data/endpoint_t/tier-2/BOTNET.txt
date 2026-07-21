@@ -53,9 +53,9 @@ Let me complete this as a comprehensive encyclopedia reference document.
 
 This entry documents a class of Domain Generation Algorithm (DGA) employed by multiple botnet families in which the pseudo-random number generator (PRNG) is seeded exclusively by the current system date. The seed construction follows the deterministic pattern:
 
-
-> *[Implementation code block redacted — 2 lines of javascript. Full unredacted data available to verified researchers upon request.]*
-
+```javascript
+var rng = new Random(year * 10000 + month * 100 + day);
+```
 
 This yields an integer seed value of the form `YYYYMMDD` (e.g., `20250718`), producing a deterministic, predictable sequence of domains for any given calendar date. The simplicity of this seeding mechanism renders the DGA trivially reversible by defenders, enabling pre-computation of all future domains for purposes of **sinkholing**, **blocklisting**, and **preemptive registration**.
 
@@ -76,9 +76,14 @@ The seed space for a single year contains at most **365 distinct values** (366 i
 
 #### 2.2 Domain Generation Pipeline
 
-
-> *[Implementation code block redacted — 7 lines of code. Full unredacted data available to verified researchers upon request.]*
-
+```
+Step 1:  Obtain current UTC date from infected host
+Step 2:  Compute seed = year×10000 + month×100 + day
+Step 3:  Initialize PRNG with seed
+Step 4:  Generate N domains via PRNG output mapped to character set
+Step 5:  Resolve domains sequentially until one returns a valid A/AAAA record
+Step 6:  Establish C2 communication
+```
 
 Typical generation parameters across observed variants:
 
@@ -98,9 +103,16 @@ Because the entire seed space is enumerable, defenders may compute **all possibl
 
 #### 3.1 Precomputation Algorithm
 
-
-> *[Implementation code block redacted — 9 lines of code. Full unredacted data available to verified researchers upon request.]*
-
+```
+FOR year FROM current_year TO current_year + 5:
+    FOR month FROM 1 TO 12:
+        FOR day FROM 1 TO days_in_month(month, year):
+            seed ← year × 10000 + month × 100 + day
+            rng ← PRNG(seed)
+            FOR i FROM 1 TO domains_per_day:
+                domain ← generate_domain(rng)
+                REGISTER OR MONITOR domain
+```
 
 #### 3.2 Strategic Considerations
 
@@ -118,14 +130,16 @@ Because the entire seed space is enumerable, defenders may compute **all possibl
 | Signature Type | Rule |
 |---------------|------|
 | **DNS entropy** | NXDOMAIN responses for domains with high character entropy, clustered in time |
-| **Temporal pattern** | Bursts of DNS queries at fixed intervals (e.g., every 1–6 hours) to apparently random domains |
+| **Temporal pattern** | Bursts of DNS queries at fixed intervals (e.g., every XX-XX hours) to apparently random domains |
 | **TLD distribution** | Queries disproportionately targeting cheap/novelty TLDs |
 | **NXDOMAIN rate** | Ratio of NXDOMAIN to successful resolutions exceeding predefined threshold per endpoint |
 
 **Sample Snort/Suricata rule logic:**
-
-> *[Implementation code block redacted — 4 lines of code. Full unredacted data available to verified researchers upon request.]*
-
+```
+alert dns any any -> any 53 (msg:"Possible DGA Activity - High NXDOMAIN Rate";
+    threshold:type both, track by_src, count 15, seconds 60;
+    sid:1000573; rev:1;)
+```
 
 #### 4.2 Host-Based Detection
 
@@ -172,9 +186,30 @@ Sophisticated actors have evolved beyond simple date-seeded DGAs. Observed enhan
 
 ### 7. REVERSION & TAKEDOWN WORKFLOW
 
-
-> *[Implementation code block redacted — 23 lines of code. Full unredacted data available to verified researchers upon request.]*
-
+```
+[1] REVERSE ENGINEER SAMPLE
+        │
+        ▼
+[2] EXTRACT PRNG IMPLEMENTATION & SEED LOGIC
+        │
+        ▼
+[3] REPLICATE DGA IN SANDBOXED ENVIRONMENT
+        │
+        ▼
+[4] VALIDATE AGAINST LIVE DNS TELEMETRY
+        │
+        ▼
+[5] PRECOMPUTE FUTURE DOMAINS
+        │
+        ▼
+[6] COORDINATE WITH REGISTRARS / CERTs
+        │
+        ▼
+[7] REGISTER OR SINKHOLE
+        │
+        ▼
+[8] MONITOR FOR RE-EMERGENCE / ALGORITHM MUTATIONS
+```
 
 ---
 
@@ -192,9 +227,37 @@ Sophisticated actors have evolved beyond simple date-seeded DGAs. Observed enhan
 
 ### 9. APPENDIX: REFERENCE IMPLEMENTATION (Python)
 
+```python
+import random
+from datetime import date, timedelta
 
-> *[Implementation code block redacted — 30 lines of python. Full unredacted data available to verified researchers upon request.]*
+def generate_domains_for_date(d, num_domains=10, tlds=['.com','.net']):
+    """
+    Replicate the date-seeded DGA for a given date.
+    """
+    seed = d.year * 10000 + d.month * 100 + d.day
+    rng = random.Random(seed)
+    
+    chars = 'abcdefghijklmnopqrstuvwxyz0123456789'
+    domains = []
+    
+    for _ in range(num_domains):
+        length = rng.randint(8, 16)
+        name = ''.join(rng.choice(chars) for _ in range(length))
+        tld = rng.choice(tlds)
+        domains.append(f"{name}{tld}")
+    
+    return domains
 
+# Precompute all domains for 2026
+all_domains = set()
+start = date(2026, 1, 1)
+for i in range(365):
+    d = start + timedelta(days=i)
+    all_domains.update(generate_domains_for_date(d))
+
+print(f"Total unique domains: {len(all_domains)}")
+```
 
 ---
 

@@ -40,9 +40,7 @@ Let me complete this in a style consistent with an encyclopedia reference docume
 
 ### 1. Registry Persistence (HKCU Run Key)
 
-
-> *[Operational procedure redacted. Technical content identified: Windows registry persistence API. Full unredacted data available to verified researchers upon request.]*
-
+`R**********xA(HKCU, "Software\\Microsoft\\Windows\\CurrentVersion\\Run", 0, KEY_SET_VALUE, &hKey)` opens the user-level Run registry key with write access. `R**********xA` then writes the payload path as a REG_SZ value. Because this resides in HKCU rather than HKLM, Administrator privileges are **not** required—making it a favored low-privilege persistence vector.
 
 **Indicators:**
 - Sysmon Event ID 13 (Registry Value Set) targeting `\CurrentVersion\Run`
@@ -85,9 +83,22 @@ The WMI persistence mechanism uses `IWbemServices::PutInstance` to install a `__
 
 **Recommended KQL Hunting Queries:**
 
+```kql
+// Registry Run Key modifications
+DeviceRegistryEvents
+| where RegistryKey has @"Microsoft\Windows\CurrentVersion\Run"
+| where ActionType == "RegistryValueSet"
 
-> *[Implementation code block redacted — 15 lines of kql. Full unredacted data available to verified researchers upon request.]*
+// WMI Persistence bindings
+DeviceEvents
+| where ActionType in ("WmiFilterEvent", "WmiConsumerEvent")
+| project Timestamp, DeviceName, FileName, AdditionalFields
 
+// Scheduled Task anomalies via COM
+DeviceProcessEvents
+| where InitiatingProcessCommandLine has "taskschd"
+| where not(InitiatingProcessFileName has_any ("schtasks.exe", "taskeng.exe"))
+```
 
 **MITRE ATT&CK Mapping:**
 - T1547.001 — Boot or Logon Autostart Execution: Registry Run Keys
